@@ -80,9 +80,9 @@ nav a:hover {
 .responsive li {
     display: block;
 }
-ul {
+/* ul {
     list-style-type: none;
-}
+} */
 hr {
     width: 90%;
 }

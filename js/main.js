@@ -1,6 +1,10 @@
 const weekLinks = [
-    {label: "Week 1", url: "week1/index.html"}//,
-    //{label: "Week 2", url: "week2/index.html"}
+    {label: "Week 1", url: "week1/index.html"},
+    {label: "Week 2", url: "week2/index.html"}
+]
+
+const notesLinks = [
+    {label: "Notes", url: "notes.html"}
 ]
 
 let weekList = document.getElementById('weeks');
