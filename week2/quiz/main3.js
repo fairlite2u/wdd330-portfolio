@@ -4,7 +4,7 @@ alert('Welcome to Quiz Ninja!');
 // Use const because the array won't change
 const quiz = [
     ["What is Superman's real name?","Clark Kent"],
-    ["What is Wonderwoman's real name?","Dianna Prince"],
+    ["What is Wonderwoman's real name?","Diana Prince"],
     ["What is Batman's real name?","Bruce Wayne"]
   ];
 
@@ -29,5 +29,5 @@ for(const [question,answer] of quiz){
 }
 
 // Tell user their score
-// Cool trick using the ternary operator to apend and s to point for scores greater than one
+// Cool trick using the ternary operator to apend an s to point for scores greater than one
 alert(`Game Over, you scored ${score} point${score > 1 ? 's' : ''}`);
