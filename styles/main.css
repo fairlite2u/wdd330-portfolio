@@ -108,3 +108,7 @@ pre code {
 pre {
     line-height: 24px;
 }
+
+.buttonHolder {
+    text-align: center;
+}
