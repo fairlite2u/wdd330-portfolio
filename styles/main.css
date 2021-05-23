@@ -110,5 +110,6 @@ pre {
 }
 
 .buttonHolder {
+    display: block;
     text-align: center;
 }
