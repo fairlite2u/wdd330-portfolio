@@ -12,12 +12,17 @@ body {
 h1 {
     font-size: 36px;
     color: rgb(183, 203, 223);
+    
 }
 
 h2 {
     font-size: 24px;
     text-align: center;
     border-bottom: 1px solid #bbb;
+}
+
+h4 {
+    padding-top: 1rem;
 }
 
 header, main, footer {
@@ -91,4 +96,14 @@ section {
 }
 footer {
     font-size: 12px;
+}
+
+pre code {
+    background-color: whitesmoke;
+    border: 1px solid #999;
+    display: block;
+}
+
+pre {
+    line-height: 24px;
 }

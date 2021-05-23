@@ -1,7 +1,7 @@
 // This part stays the same as the previous version
 const quiz = [
     ["What is Superman's real name?","Clark Kent"],
-    ["What is Wonder Woman's real name?","Dianna Prince"],
+    ["What is Wonder Woman's real name?","Diana Prince"],
     ["What is Batman's real name?","Bruce Wayne"]
   ];
 
