@@ -95,6 +95,10 @@ hr {
 section {
     text-align: center;
 }
+#weeks {
+    text-align: center;
+    list-style: none;
+}
 footer {
     font-size: 12px;
 }
