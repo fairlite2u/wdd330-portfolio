@@ -1,13 +1,13 @@
-// This part stays the same as the previous version
+// Replace the nested arrays with objects
 const quiz = [
-    { name: "Superman",realName: "Clark Kent" },
-    { name: "Wonder Woman",realName: "Diana Prince" },
-    { name: "Batman",realName: "Bruce Wayne" },
+    { name: "Superman", realName: "Clark Kent" },
+    { name: "Wonder Woman", realName: "Diana Prince" },
+    { name: "Batman", realName: "Bruce Wayne" },
 ];
 
 // Store questions as objects inside an array
 
-// Creat and object to be the namespace using the object literal pattern
+// Creat an object to be the namespace using the object literal pattern
 // this is similar to classes in Java that I am also learning about this week!
 const game = {
     // modify the functions to be methods inside the object
