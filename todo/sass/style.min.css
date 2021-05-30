@@ -21,11 +21,11 @@ html, body {
 
 body {
   padding: 20px;
-  background-color: #4a90e2;
+  background-color: #1b5288;
 }
 
 section {
-  background-color: #f2f2f2;
+  background-color: #f9f5c8;
   width: 90%;
   max-width: 700px;
   margin: auto;
@@ -37,8 +37,8 @@ section {
   width: 15%;
   min-width: 48px;
   min-height: 48px;
-  color: #fff;
-  border: 2px solid lightgray;
+  color: #fdfffc;
+  border: 2px solid #f3eb91;
   border-radius: 10px;
   outline: none;
 }
@@ -80,7 +80,7 @@ section {
 .newItemEntry form input[type="text"] {
   width: 80%;
   font-size: 1.25rem;
-  border: 2px solid lightgray;
+  border: 2px solid #f3eb91;
   border-radius: 10px;
   padding: 0.75rem;
   outline: none;
@@ -94,7 +94,7 @@ section {
 
 .newItemEntry form button {
   font-size: 1.25rem;
-  background-color: #4caf50;
+  background-color: #3c9537;
   padding: 0.75rem;
 }
 
@@ -180,7 +180,7 @@ section {
 
 .buttonContainer .buttonBar button {
   font-size: 1rem;
-  background-color: #9f6060;
+  background-color: #bd320f;
   padding: 0 0.1rem;
   width: 30%;
 }
