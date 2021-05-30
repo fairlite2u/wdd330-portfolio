@@ -37,10 +37,13 @@ const initApp = () => {
     const removeCheckedItems = document.getElementById("clearCheckedItems");
     removeCheckedItems.addEventListener("click", (event) => {
         const checkbox = document.querySelectorAll("input[type='checkbox']");
-        if(checkbox.checked = true) {
-            toDoList.removeCheckedFromList(checkbox.id);
-            updatePersistentData(toDoList.getList())
-            refreshThePage();
+        const list = toDoList.getList();
+        for (let i = 0; i < list.length; i++) {
+            if (checkbox.checked = true) {
+                toDoList.removeCheckedFromList(checkbox.id);
+                updatePersistentData(toDoList.getList())
+                refreshThePage();
+            }
         }
     });
 
@@ -48,7 +51,7 @@ const initApp = () => {
     const uncheckCheckedItems = document.getElementById("uncheckAllItems");
     uncheckCheckedItems.addEventListener("click", (event) => {
         const checkbox = document.querySelectorAll("input[type='checkbox']");
-        if(checkbox.checked = true) {
+        if (checkbox.checked = true) {
             checkbox.checked = false;
             updatePersistentData(toDoList.getList())
             refreshThePage();
