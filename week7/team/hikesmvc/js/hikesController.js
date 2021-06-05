@@ -2,7 +2,7 @@
 import HikeModel from './hikeModel.js';
 import HikesView from './hikesView.js';
 //  we also need the new comments class to add that functionality
-import Comments from './comments.js';
+import Comments from './commentsController.js';
 
 export default class HikesController {
   // a class needs a constructor
