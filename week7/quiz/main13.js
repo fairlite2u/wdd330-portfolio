@@ -190,4 +190,4 @@ const game = {
 // // Update the call to the game.start function to be triggered by clicking the button
 // view.start.addEventListener('click', () => game.start(quiz), false);
 // // Add event listener that is triggered when the button is clicked
-// view.response.addEventListener('click', (event) => game.check(event), false);
+view.response.addEventListener('click', (event) => game.check(event), false);
