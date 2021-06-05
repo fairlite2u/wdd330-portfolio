@@ -13,15 +13,15 @@ class CommentModel {
         };
         this.comments.push(newComment);
     }
-    getAllComments() {
-        return this.comments;
-    }
-
-    //stretch
-    filterCommentsByName() {
-
-        return this.comments.filter(el => el.name);
-    }
+    getComments(q = null) {
+        if (q === null) {
+          // no query, get all comments of the type
+          return this.comments;
+        } else {
+          // comments for a specific post...filter by name
+          return this.comments.filter(el => el.name === q);
+        }
+      }
 
 
 }
@@ -37,7 +37,7 @@ function readFromLocalStorage(key) {
 
 const commentUI = `<div class="addComment">
 <h2>Add a comment</h2>
-<input type="text" id="commentEntry" />
+<input type="text" id="commentEntry">
 <button id="commentSubmit">Comment</button>
 </div>
 <h2>Comments</h2>
@@ -51,8 +51,6 @@ function renderCommentList(element, comments) {
         element.appendChild(item);
     });
 }
-
-
 
 class Comments {
     constructor(type, commentElementId) {
