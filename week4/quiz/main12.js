@@ -121,7 +121,7 @@ const game = {
         // Check the length of the this.questions array to see if there are questions left
         // Change it from greater than 0 to greater than 2 so that three possible answers are given
         if(this.questions.length > 2) {
-            // Add cal to the shuffle method so questions are asked in a random order
+            // Add call to the shuffle method so questions are asked in a random order
             shuffle(this.questions);
             // If questions left, use pop() method to remove the last element in the array and assign it to this.question
             this.question = this.questions.pop();
@@ -132,7 +132,7 @@ const game = {
             // The next two line of code stay the same from QuizNinja 7, but are placed inside the if statement
             const question = `What is ${this.question.name}'s real name?`;
             // the call to the render function replaces the prompt dialog
-            view.render(view.question,question);
+            view.render(view.question, question);
             // The answer options need to be displayed
             view.render(view.response, view.buttons(options));
         }
