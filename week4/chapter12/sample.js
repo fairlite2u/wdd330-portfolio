@@ -255,7 +255,7 @@ const flash = createSuperhuman({name: 'Flash', realName: 'Barry Allen'}, superSp
 superman.fly().move().xray(); // Drawback to this is can make code difficult to debug
 
 
-// 'this' can lose scope when functions are nested inside of other functions, as shown below:
+// Binding this - 'this' can lose scope when functions are nested inside of other functions, as shown below:
 superman.friends = [batman, wonderWoman, aquaman];
 superman.findFriends = function() {
     this.friends.forEach(function(friend) {
@@ -267,7 +267,8 @@ superman.findFriends();
 // Wonder Woman is friends with undefined
 // Aquaman is friends with undefined
 
-// To fix the problem, use that=this, and refer to that in the nested function:
+// To fix the problem try one of these solution:
+// Use that=this, and refer to that in the nested function:
 superman.findFriends = function() {
     const that = this;
     this.friends.forEach(function(friend) {
@@ -279,3 +280,30 @@ superman.findFriends();
 // Wonder Woman is friends with Superman
 // Aquaman is friends with Superman
 
+// Use bind(this) to set the value of this in the function: 
+superman.findFriends = function() {
+    this.friends.forEach(function(friend) {
+        console.log(`${friend.name} is friends with ${this.name}`);
+    }.bind(this))
+}
+superman.findFriends();
+
+// Use for-of instead of forEach():
+superman.findFriends = function() {
+    for(const friend of this.friends) {
+        console.log(`${friend.name} is friends with ${this.name}`);
+    };
+}
+superman.findFriends();
+
+// Use Arrow functions:
+superman.findFriends = function() {
+    this.friends.forEach((friend) => {
+        console.log(`${friend.name} is friends with ${this.name}`);
+    });
+}
+superman.findFriends();
+
+// Borrow methods from prototypes by making a reference to the function that you want to borrow from
+const fly = superman.fly;
+fly.call(batman); // Up, up and away! Batman soars through the air!
