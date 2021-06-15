@@ -6,7 +6,8 @@ const weekLinks = [
     {label: "Week 5", url: "week5/index.html"},
     {label: "Midterm: Todo App", url: "todo/index.html"},
     {label: "Week 7", url: "week7/index.html"},
-    {label: "Week 8", url: "week8/index.html"}
+    {label: "Week 8", url: "week8/index.html"},
+    {label: "Week 9", url: "week9/index.html"}
 ]
 
 const notesLinks = [
