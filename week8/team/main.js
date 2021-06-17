@@ -1,7 +1,7 @@
 const base = 'https://swapi.dev/api/';
 const people = 'people/';
 const url = base + people;
-const page = 'http://swapi.dev/api/people/?page=';
+const page = 'https://swapi.dev/api/people/?page=';
 let nextURL = '';
 let prevURL = '';
 
