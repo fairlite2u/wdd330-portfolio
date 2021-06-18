@@ -19,89 +19,92 @@
     <main>
         <h2>Week 9 Notes</h2><br>
 
-        <h3><strong><cite>HTML5 & CSS3 For the Real World</cite> Chapter 8:</strong> CSS3 Transforms and Transitions</h3>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 9:</strong> The Window Object</h3>
         <hr>
-        <h3>Transforms</h3>
+        <h3>The Browser Object Model</h3>
         <ul>
-            <li>The CSS3 <code><strong>transform</strong></code> property lets you translate, rotate, scale, and/or skew any element on the page.</li>
-            <li>Manipulate an element's appearance using transform functions:</li>
-            <ul>
-                <li><code>transform: translate(x,y); transform: translateX(); transform: translateY()</code> - allows you to move elements left, right, up, or down.</li>
-                <li><code>transform: scale(x,y); transform: scaleX(); transform: scaleY()</code> - Scales and element by the defined factors horizontally and vertically.</li>
-                <li><code>transform: rotate()</code> - Rotates an element around the point of origin by a specified angle value.</li>
-                <li><code>transform: skew(x,y); transform: skewX(); transform: skewY()</code> - Specifies a skew along the x and y axes.</li>
-                <li><code>transform:matrix(n,n,n,n,n,n)</code> - Combines all the 2D transform methods into one.</li>
-            </ul>
-            <li>There is also a <code>transform-origin</code> property that controls the origin from which the transforms are applied.</li>
+            <li>The Browser Object Model is a collection of properties and methods that contain information about the
+                browser and computer screen.</li>
+            <li>These properties and moethos are made available through the <code><strong>window</strong></code> object.
+            </li>
+            <li>Global variables are created without using the <code>const, let,</code> or <code>var</code> keywords and
+                are actual properties of the global object which means they are also properties of the
+                <code>window</code> object.</li>
+            <li><code>window</code> object functions that produce dialogs: <code>alert(), confirm(), prompt()</code>.
+                These methods should be user with care becuase they stop the executions of a program in its tracks.</li>
         </ul>
-        <h3>Transitions</h3>
+        <h3>Browser Information</h3>
         <ul>
-            <li>The CSS3 <code><strong>transition</strong></code> property allow the values of CSS properties to change over time, essentially providing simple animations.</li>
-            <li>Steps to create a simple transition using only CSS:</li>
-            <ol>
-                <li>Declare the orignial state of the element in the default style declaration.</li>
-                <li>Declare the final state of your transitioned element; for example, a <code>:hover</code> state.</li>
-                <li>Include the transition functions in your default style declaration using the transition properties.</li>
-            </ol>
-            <li>Make sure to note that the <code>transition</code> is declared in the default or originating state.</li>
-            <li>Transition properties:</li>
+            <li>The <code>window</code> object has a number of properties and methods that provide information about the
+                user's browser including <code>navigator</code> and <code>location</code>. These also have their own
+                properties that provide more information, including:</li>
             <ul>
-                <li><code>transition-property</code> - Defines the CSS properties of the element that should be transitioned, with <code>all</code> for all properties being the default.</li>
-                <li><code>transition-duration</code> - Sets how long the transition will take, specified in seconds or milliseconds.</li>
-                <li><code>transition-timing-function</code> - Controls the pace of the transition in more granular detail.</li>
-                <li><code>transition-delay</code> - Allows you to delay the start of the transition.</li>
-                <li>The <code>transition</code> shorthand property allows you to combine the above 4 values into one declaration.</li>
+                <li><code>window.navigator.userAgent</code> - Returns information about the brower and operating system
+                    being used. This property has been deprecated from the official specification, but remains well
+                    supported in all major browsers.</li>
+                <li><code>window.location.href</code> - Returns the full URL as a string.</li>
+                <li><code>window.location.protocol</code> - Returns a string describing the protocol used.</li>
+                <li><code>window.location.host</code> - Returns a string describing the domain of the current URL and
+                    the port number (which is often omitted if the default port 80 is used).</li>
+                <li><code>window.location.pathname</code> - Returns a string of the path that follows the domain.</li>
+                <li><code>window.location.assign()</code> - Can be used to load another resource from a URL provided as
+                    a parameter.</li>
             </ul>
-            <li>The <code>transition</code> property can be applied to the <code>transform</code> property.</li>
+            <li>Most of those properties are read/write, which means they can also be changed by assignment.</li>
+            <li>The <code>window.history</code> property can be used to access information about any previously visited
+                pages in the current browser session, not to be confused with the HTML5 History API.</li>
+            <li>The <code>window.screen</code> object contains information about the screen the browser is displayed on.
+                Things like height, width, available height and width, and color bit depth can be found. The
+                <code>screen</code> object has more uses for mobile devices.</li>
+            <li>Many of these methods and properties should be used with care as they have been abused in the past.</li>
         </ul>
-        <h3>Animations</h3>
+        <h3>The Document Object</h3>
         <ul>
-            <li>CSS animations allow you to control each step of an animation via keyframes.</li>
-            <li>A keyframe is a snapshot that defines a starting or end point of any smooth transition.</li>
-            <li>Animations allow us to add any number of keyframes inbetween the start and end points.</li>
-            <li>To create an animation, use the <code>@keyframes</code> rule followed by a name of your choosing.</li>
-            <li>Animation properties:</li>
+            <li>The <code>document</code> object has properties and methods that deal with the page that has been loaded
+                into the window. Here are a few methods worth looking at:</li>
             <ul>
-                <li><code>animation-name</code> - This property is used to attach an animation to an element.</li>
-                <li><code>animation-duration</code> - This property defines the length of time an animation takes to complete one iteration.</li>
-                <li><code>animation-timing-function</code> - This property determines how the animation will progress over its duration.</li>
-                <li><code>animation-iteration-count</code> - This property lets you define how many times the animation will play through.</li>
-                <li><code>animation-direction</code> - This property allows you to control what direction and animation plays in.</li>
-                <li><code>animation-delay</code> - This property is used to define how many milliseconds or seconds to wait before the browser begins the animation.</li>
-                <li><code>animation-fill-mode</code> - This property defines what happens before the first animation iteration begins and after the last animation iteration concludes.</li>
-                <li><code>animation-play-state</code> - This property defines whether the animation is running or paused.</li>
-                <li>The shorthand <code>animation</code> property allows you to declare values for all or some of the properties at once.</li>
+                <li><code>document.write</code> - Writes a string of text to the page. If a page has already loaded, it
+                    will completely replace the current document. You can also include HTML in the string and it will
+                    become part of the DOM tree. Placing the method within a document inside <code>&lt;script&gt;</code> tags
+                        will inject the string into the markup and not overwrite the rest of the HTML on the page. The
+                        use of <code>document.write</code> is heavily frowned upon and there are only rare legitimate
+                        uses of it.</li>
+                <li><code>document.cookie</code> - Used to create a cookie which is a list of name/value pairs. Cookies
+                    are used to allow a browser to retrieve information between
+                    requests to remember user's previous visits. Using cookes for data storage is being replaced by the
+                    HTML5 localStorage API in many cases, but cookies are still useful for retaining state information
+                    such as if a user is logged in.</li>
+                <li><code>document.write</code></li>
             </ul>
+        </ul>
+        <h3>Timing Functions</h3>
+        <ul>
+            <li>The <code>window.setTimeout()</code> method accepts a callback to a function as its first parameter and a number of milliseconds as its second paramenter.</li>
+            <li><code>window.clearTimeout()</code> will prevent the timeout if called before the setTimeout parameters are met.</li>
+            <li>The <code>window.setInterval()</code> method will repeatedly invoke the callback function after every given number of milliseconds.</li>
+            <li><code>window.clearInterval()</code> will stop the setInterval method.</li>
+            <li><code>setTimeout()</code> and <code>setInterval()</code> can be used to animate elements on a web page, although not as well as <code>window.requestAnimationFrame()</code>.</li>
+            <li><code>window.requestAnimationFrame()</code> has a much smoother performance.</li>
+            <li>In general, it is typically better to use CSS for any animation effects, although there may be times when JavaScript might be the better solution.</li>
         </ul><br>
 
-        <h3><strong><cite>HTML5 & CSS3 For the Real World</cite> Chapter 12:</strong> Canvas, SVG, and Drag and Drop</h3>
+
+
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 14:</strong> HTML5 APIs</h3>
         <hr>
-        <h3>Canvas</h3>
+        <h3>HTML5</h3>
         <ul>
-            <li>HTML5's Canvas API allows us to draw anything through JavaScript.</li>
-            <li>Canvas can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing.</li>
-            <li>If the height and width are different than the default, it's best to explicitly specify the attributes in the canvas element</li>
+            <li></li>
         </ul>
 
-        <h3>SVG</h3>
+        <h3>The <code>data-</code> Attribute</h3>
         <ul>
-            <li>SVG stands for Scalable Vector Graphics, which is a specific file format that allows you to describe vector graphics using XML.</li>
-            <li>Unlike canvas, images created with SVG are available via the DOM.</li>
-            <li>Image editors, like Inkscape (inkscape.org) can be used to help create SVG images.</li>
+            <li></li>
         </ul>
-        <h3>Drag and Drop</h3>
+        <h3>HTML5 APIs</h3>
         <ul>
-            <li>The Drag and Drop API allows us to specify that certain elements are draggable, and then specify what should happen when these draggable elements are dragged over or dropped onto other elements on the page.</li>
-            <li>Not supported by Android or iOS.</li>
-            <li>There are two major kinds of functionality that can be implements with Drag and Drop: dragging files from your computer into a web page (in combination with the File API) or dragging elements into other elements on the same page.</li>
-            <li>Steps to adding drag and drop to your page:</li>
-            <ol>
-                <li>Set the <code>draggable</code> attribute on any HTML elements you'd like to be draggable.</li>
-                <li>Add an event listener for the <code>dragstart</code> event on any draggable HTML element.</li>
-                <li>Add an event listener for the <code>dragover</code> and <code>drop</code> events on any elements that you want to have accept dropped items.</li>
-            </ol>
-            <li><code>draggable</code> is not a Boolean attribute, so you have to explicitly set it to true.</li>
-            <li>DataTransfer objects allow us to set and get data about the elements that are being dragged.</li>
+            <li></li>
         </ul>
 
 
