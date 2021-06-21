@@ -108,6 +108,13 @@
         <ul>
             <li>The Web Storage API provides a key-value store on the client's computer that is similar to using cookies but has fewer restrictions, more storage capacity, and is generally easier to use.</li>
             <li>Browsers that support the Web Storage API have a <code>window</code> object property called <code>localStorage</code> that has several properties and methods that are used to store data.</li>
+            <li>There is also a <code>sessionStorage</code> object that works like <code>localStorage</code> but the data is only saved for the current session.</li>
+            <li>Basics of using <code>localStorage</code>:</li>
+            <ul>
+                <li>To set and item and then retrieve it's value, you can use <code>localStorage.setItem('name', 'value')</code> and <code>localStorage.getItem('name')</code>.</li>
+                <li>Alternatively, you can use assignment, for example: <code>localStorage.name = 'value'</code>.</li>
+                <li>To remove something from local storage you can use the <code>removeItem</code> method or the <code>delete</code> operator or you can remove everything using the <code>clear</code> method.</li>
+            </ul>
         </ul>
         <h3>Geolocation</h3>
         <ul>
@@ -115,7 +122,23 @@
             <li>Permission to use this has to be granted by the user first, due to privacy concerns.</li>
             <li>Geolocation is a property of the <code>navigator</code> object.</li>
         </ul>
-
+        <h3>Web Workers</h3>
+        <ul>
+            <li>Since JavaScript is a single-threaded language, web workers allow processes to be run in the background, adding support for concurrency in JavaScript.</li>
+            <li>The <code>Worker()</code> constructor function is used to create a new worker: <code>const worker = new Worker('task.js');</code>.</li>
+            <li>The function takes another JavaScript file as an argument and downloads it. Once the file has downloaded completely, the worker will start.</li>
+            <li>The variable that is assigned to the constructor function is used to refer to the worker in the main program, the keyword <code>self</code> is used to refer to the worker in the worker script.</li>
+            <li>Web worker use the concept of messages to communicate back and forth between the main script and the worker script.</li>
+            <li><code>worker.terminate()</code> is used to stop a worker from inside the main code or <code>self.close()</code> in used from inside the worker script.</li>
+            <li>Shared web workers can also be created to allow lots of different scripts on the same domain to access the same worker object.</li>
+            <li>The Service Worker API allows a worker script to run in the background with the added benefit of being able to intercept network requests.</li>
+        </ul>
+        <h3>Websockets</h3>
+        <ul>
+            <li>Websocket is a protocol that allows two-way communication with a server - also know as push messaging.</li>
+            <li>Check out websocket.org for more ways to use websockets and to learn more about them.</li>
+        </ul>
+        <h3>Notifications</h3>
 
     </main>
     <div class="buttonHolder">
