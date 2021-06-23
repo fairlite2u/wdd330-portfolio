@@ -19,64 +19,63 @@
     <main>
         <h2>Week 3 Notes</h2><br>
 
-        <h3><strong><i>Object methods, "this"</i></strong></h3>
+        <h3><strong><cite>Object methods, "this"</cite></strong></h3>
         <hr>
         <h3>"this" in methods</h3>
         <ul>
             <li>It's common that an object method needs to access the info stored in the object, for example, the code
-                inside user.sayHi() may need the name of the user. That's when the <strong>this</strong> keyword comes
+                inside user.sayHi() may need the name of the user. That's when the <code>this</code> keyword comes
                 into play.</li>
-            <li>The value of <strong>this</strong> is the object "before dot", the one used to call the method.</li>
+            <li>The value of <code>this</code> is the object "before dot", the one used to call the method.</li>
         </ul>
         <h3>"this" is not bound</h3>
         <ul>
-            <li>In JavaScript, <strong>this</strong> can be used in any function, even if it's not a method of an
+            <li>In JavaScript, <code>this</code> can be used in any function, even if it's not a method of an
                 object.</li>
-            <li>The value of <strong>this</strong> is evaluated during run-time, depending on the context.</li>
-            <li>The rule is simple: if <strong>object.method()</strong> is called, then <strong>this</strong> is
-                <strong>object</strong> during the call of <strong>method</strong>.</li>
+            <li>The value of <code>this</code> is evaluated during run-time, depending on the context.</li>
+            <li>The rule is simple: if <code>object.method()</code> is called, then <code>this</code> is
+                <code>object</code> during the call of <code>method</code>.</li>
         </ul>
         <h3>Arrow functions have no "this"</h3>
         <ul>
-            <li>If we reference <strong>this</strong> from an arrow function, it is taken from the outer "normal"
+            <li>If we reference <code>this</code> from an arrow function, it is taken from the outer "normal"
                 function.</li>
             <li>Provides the advantage of being able to use both types of quote marks within a string: `She said, "It's
                 Me!"`</li>
         </ul><br>
 
-        <h3><strong><i>This in JavaScript</i></strong></h3>
+        <h3><strong><cite>This in JavaScript</cite></strong></h3>
         <hr>
         <h3>So, what is this?</h3>
         <ul>
-            <li><strong>this</strong> is a keyword whose value changes depending on how a functions gets called.</li>
+            <li><code>this</code> is a keyword whose value changes depending on how a functions gets called.</li>
             <li>Preferred method of creating an array is using the array literal notation: const myArray = [];</li>
-            <li>There are six different ways where <strong>this</strong> can take on new values:</li>
+            <li>There are six different ways where <code>this</code> can take on new values:</li>
             <ol>
-                <li><strong>this</strong> in global context: not usually used</li>
-                <li><strong>this</strong> in object construction: <strong>this</strong> refers to the object instance
+                <li><code>this</code> in global context: not usually used</li>
+                <li><code>this</code> in object construction: <code>this</code> refers to the object instance
                 </li>
-                <li><strong>this</strong> in an object method: <strong>this</strong> refers to the object, use methods
+                <li><code>this</code> in an object method: <code>this</code> refers to the object, use methods
                     to get the instance of an object</li>
-                <li><strong>this</strong> in a simple function: <strong>this</strong> is always set to
-                    <strong>Window</strong></li>
-                <li><strong>this</strong> in an arrow function: <strong>this</strong> is always the same as
-                    <strong>this</strong> around it (in it's immediate scope).</li>
-                <li><strong>this</strong> in an event listener: <strong>this</strong> is set to the element that fired
+                <li><code>this</code> in a simple function: <code>this</code> is always set to
+                    <code>Window</code></li>
+                <li><code>this</code> in an arrow function: <code>this</code> is always the same as
+                    <code>this</code> around it (in it's immediate scope).</li>
+                <li><code>this</code> in an event listener: <code>this</code> is set to the element that fired
                     the event.</li>
             </ol>
         </ul>
         <h3>Changing this with bind</h3>
         <ul>
-            <li><strong>bind</strong> is a method that is present in every function.</li>
-            <li><strong>bind</strong> allows you to change the <strong>this</strong> context.</li>
+            <li><code>bind</code> is a method that is present in every function.</li>
+            <li><code>bind</code> allows you to change the <code>this</code> context.</li>
             <li>This method takes in any number of arguments and returns the bound function.</li>
-            <li>The first parameter you pass into <strong>bind</strong> becomes <strong>this</strong> in the bound
+            <li>The first parameter you pass into <code>bind</code> becomes <code>this</code> in the bound
                 function.</li>
             <li>The other parameters you pass will be passed as arguments to the original function.</li>
-            <li>Note: <strong>bind</strong> doesn't work with arrow functions.</li>
+            <li>Note: <code>bind</code> doesn't work with arrow functions.</li>
         </ul><br>
-
-        <h3><strong><i>JavaScript Novice to Ninja: Chapter 5</i></strong></h3>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 5:</strong> Objects</h3>
         <hr>
         <h3>Object Literals</h3>
         <ul>
@@ -102,12 +101,11 @@
             <li>Date Object - contains information about dates & times.</li>
             <li>The RegExp Object</li>
         </ul><br>
-
-        <h3><strong><i>JavaScript Novice to Ninja: Chapter 6</i></strong></h3>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 6:</strong> The Document Object Model</h3>
         <hr>
-        <h3>The Document Object Model</h3>
+        <h3>What is the DOM?</h3>
         <ul>
-            <li>DOM, for short, represents an HTML document as a network of connected nodes that form a tree-like structure.</li>
+            <li>The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a tree-like structure.</li>
             <li>The DOM treats everything on a web page as a node.</li>
             <li>The HTML tag is the root node and every other part is a child node.</li>
             <li>The DOM is not actually part of the JavaScript because it is language agnostic. This means it can be used in any programming language.</li>
@@ -122,8 +120,7 @@
                 <li>Query Selectors</li>
             </ul>
         </ul><br>
-
-        <h3><strong><i>JavaScript Novice to Ninja: Chapter 7</i></strong></h3>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 7:</strong> Events</h3>
         <hr>
         <h3>Event Listeners</h3>
         <ul>
