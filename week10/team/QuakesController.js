@@ -1,6 +1,4 @@
-import {
-    getLocation
-} from './utilities.js';
+import {getLocation} from './utilities.js';
 import Quake from './Quake.js';
 import QuakesView from './QuakesView.js';
 
@@ -24,7 +22,6 @@ export default class QuakesController {
         this.parentElement = document.querySelector(this.parent);
         await this.initPos();
         this.getQuakesByRadius(100);
-        console.log("Is this working?");
     }
     async initPos() {
         // if a position has not been set
