@@ -12,7 +12,7 @@
 // ];
 
 // Use Ajax to fetch questions from a server instead of having them as an object in our JS
-const url = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/questions.json';
+const url = 'https://spbooks.github.io/jsninja2/questions.json';
 // Use Fetch API to get the JSON data
 fetch(url)
 // Returns data as a JS object
