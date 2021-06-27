@@ -19,62 +19,91 @@
     <main>
         <h2>Week 10 Notes</h2><br>
 
-        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 9:</strong> The Window Object</h3>
+        <h3><strong><cite>MDN Web Docs:</cite> Client-Side Form Validation</strong></h3>
         <hr>
 
-        <h3>The Browser Object Model</h3>
+        <h3>What is form validation?</h3>
         <ul>
-            <li>The Browser Object Model is a collection of properties and methods that contain information about the
-                browser and computer screen.</li>
-            <li>These properties and moethos are made available through the <code><strong>window</strong></code> object.
-            </li>
-            <li>Global variables are created without using the <code>const, let,</code> or <code>var</code> keywords and
-                are actual properties of the global object which means they are also properties of the
-                <code>window</code> object.</li>
-            <li><code>window</code> object functions that produce dialogs: <code>alert(), confirm(), prompt()</code>.
-                These methods should be user with care becuase they stop the executions of a program in its tracks.</li>
-        </ul>
-        
-        <h3>Timing Functions</h3>
-        <ul>
-            <li>The <code>window.setTimeout()</code> method accepts a callback to a function as its first parameter and a number of milliseconds as its second paramenter.</li>
-            <li><code>window.clearTimeout()</code> will prevent the timeout if called before the setTimeout parameters are met.</li>
-            <li>The <code>window.setInterval()</code> method will repeatedly invoke the callback function after every given number of milliseconds.</li>
-            <li><code>window.clearInterval()</code> will stop the setInterval method.</li>
-            <li><code>setTimeout()</code> and <code>setInterval()</code> can be used to animate elements on a web page, although not as well as <code>window.requestAnimationFrame()</code>.</li>
-            <li><code>window.requestAnimationFrame()</code> has a much smoother performance.</li>
-            <li>In general, it is typically better to use CSS for any animation effects, although there may be times when JavaScript might be the better solution.</li>
-        </ul><br>
-
-
-        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 14:</strong> HTML5 APIs</h3>
-        <hr>
-
-        <h3>The <code>data-</code> Attribute</h3>
-        <ul>
-            <li>A way of embedding data in a web page using custom attributes that are ignored by the browser.</li>
-            <li>They are private to a page, so are not intended to be used by an external service - their sole purpose is to be used by a JavaScript program.</li>
-            <li>When naming these attributes, they must use the following format:</li>
+            <li>The browser and/or the web server checking to see that the data entered in the form is in the correct
+                format and
+                within the constraints set by the application.</li>
+            <li>Validation done in the browser is called client-side validation, while validation done on the server is
+                called server-side validation.</li>
+            <li>Why should forms be validated?</li>
             <ul>
-                <li>Start with <code>date-</code>.</li>
-                <li>Contain only lowercase letters, numbers, hyphens, dots, colons, or underscores.</li>
-                <li>Include an optional string value.</li>
+                <li>To get the right data, in the right format.</li>
+                <li>To protect user's data.</li>
+                <li>To protect ourselves.</li>
             </ul>
         </ul>
 
-        <h3>HTML5 Web Storage</h3>
+        <h3>Using built-in HTML5 form validation</h3>
         <ul>
-            <li>The Web Storage API provides a key-value store on the client's computer that is similar to using cookies but has fewer restrictions, more storage capacity, and is generally easier to use.</li>
-            <li>Browsers that support the Web Storage API have a <code>window</code> object property called <code>localStorage</code> that has several properties and methods that are used to store data.</li>
-            <li>There is also a <code>sessionStorage</code> object that works like <code>localStorage</code> but the data is only saved for the current session.</li>
-            <li>Basics of using <code>localStorage</code>:</li>
+            <li>Most user data can be validated without relying on JavaScript using HTML5 form controls like
+                <code>required</code>, <code>minlength</code> and <code>maxlength</code>, <code>min</code> and
+                <code>max</code>, <code>type</code>, and <code>pattern</code>.</code></li>
+            <li>If the data follows all the rules specified and validates, the browser will submit the form. If anything
+                is still invalid, the browser will block the form and display an error message.</li>
+            <li>CSS can be used to change styling on form fields that aren't valid with the <code>:invalid</code>
+                pseudo-class.</li>
+        </ul>
+
+        <h3>Validating forms using JavaScript</h3>
+        <ul>
+            <li>Using JavaScript for validation allows you to take control over the look and feel of native error
+                messages and deal with legacy browsers.</li>
+            <li>The Constraint Validation API consists of a set of methods and properties available on some form element
+                DOM interfaces and make it easier to customize error messages.</li>
+            <li>You can also validate form without a built-in API by writing your own JavaScript. In these situations,
+                you should ask yourself a few questions:</li>
             <ul>
-                <li>To set and item and then retrieve it's value, you can use <code>localStorage.setItem('name', 'value')</code> and <code>localStorage.getItem('name')</code>.</li>
-                <li>Alternatively, you can use assignment, for example: <code>localStorage.name = 'value'</code>.</li>
-                <li>To remove something from local storage you can use the <code>removeItem</code> method or the <code>delete</code> operator or you can remove everything using the <code>clear</code> method.</li>
+                <li>What kind of validation should I perform?</li>
+                <li>What should I do if the form doesn't validate?</li>
+                <li>How can I help the user to correct invalid data?</li>
+            </ul>
+            <li>When it comes to client-side form validation, always remember to think carefully about the user</li>
+            <ul>
+                <li>Display explicit error messages.</li>
+                <li>Be permissive about the input format.</li>
+                <li>Point out exactly where the error occurs, expecially on large forms.</li>
             </ul>
         </ul>
-       
+        <br>
+
+        <h3><strong><cite>MDN Web Docs:</cite> Using Fetch</strong></h3>
+        <hr>
+        <ul>
+            <li>The Fetch API provides a JavaScript interface for accession and manipulation parts of the HTTP pipeline,
+                such as request and responses.</li>
+            <li>The simplest use of <code>fetch()</code> takes one argument &#8212 the path to the resource you want to
+                fetch &#8212 and returns a promise containing the response.</li>
+            <li>Fetch requests are controlled by the <code>connect-src</code> directive of Content Security Policy
+                rather than the directive of the resources it's retrieving.</li>
+            <li>The <code>fetch()</code> method can optionally accept a second parameter, an <code>init</code> object
+                that allows you to control a number of different settings, including: <code>method, headers, body, mode,
+                    credentials</code> and <code>redirect</code>.</li>
+            <li>To cause browsers to send a request with credentials included on both same-origin and cross-origin
+                calls, add <code>credentials: 'include'</code> to the <code>init</code> object.</li>
+            <li>To only send credentials on the same origin, add <code>credentials: 'same-origin'</code>.</li>
+                <li>To not include credentials, use <code>credentials: 'omit'</code>.</li>
+                <li>The <code>Headers</code> interface allows you to create your own headers object via the <code>Headers()</code> constructor.</li>
+                <li><code>Response</code> instances are returned when <code>fetch()</code> promises are resolved.</li>
+                <li>The most common response properties you'll use are: <code>Response.status, Response.statusText,</code> and <code>Response.ok</code>.</li>
+                <li>Bothe request and responses may contain body data. A body is a instance of any of the following types:</li>
+                <ul>
+                    <li><code>ArrayBuffer</code></li>
+                    <li><code>ArrayBufferView</code></li>
+                    <li><code>Blob</code>/File</li>
+                    <li>string</li>
+                    <li><code>URLSearchParams</code></li>
+                    <li><code>FormData</code></li>
+                </ul>
+                <li>Both request and response will try to intelligently determine the content type.</li>
+                <li>Fetch API support can be detected by checking for the existence of <code>Headers, Request, Response,</code> or <code>fetch()</code> on the <code>Window</code> or <code>Worker</code> scope.</li>
+
+
+        </ul>
+
     </main>
     <div class="buttonHolder">
         <form>
