@@ -42,16 +42,15 @@
         <ul>
             <li>
                 <label for="uname">User name:</label>
-                <input type="text" name="uname" id="uname" required pattern="[a-z]\.[a-z0-9]{3,}">
+                <input type="text" name="uname" id="uname" required pattern="[a-z]\.[a-z0-9]{3,}" title="A single letter, followed by a period, followed by at least three more letters, all lowercase">
             </li>
             <li>
                 <label for="email">Email address:</label>
-                <input type="email" name="email" id="email" required pattern="[a-zA-Z0-9]{1,}@bigcorp\.eu">
+                <input type="email" name="email" id="email" required pattern="[a-zA-Z0-9]+@bigcorp\.eu" title="One or more upper-case or lower-case letters or numbers followed by '@bigcorp.eu'">
             </li>
             <li>
                 <label for="phone">Phone number:</label>
-                <input type="tel" name="phone" id="phone" required
-                    pattern="([0-9]{10})|([0-9]{3}(\.|\-| )[0-9]{3}(\.|\-| )[0-9]{4})">
+                <input type="text" name="phone" id="phone" required pattern="\d{10}|\d{3}[ -\.]\d{3}[ -\.]\d{4}">
             </li>
             <li>
                 <label for="comment">Comment:</label>
