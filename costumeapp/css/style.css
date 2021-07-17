@@ -125,7 +125,7 @@ table {
   border-bottom-width: 1px;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(odd) {
   background-color: #eee0cb;
 }
 
