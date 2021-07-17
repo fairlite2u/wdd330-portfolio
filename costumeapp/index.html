@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Costume Inventory | Home Page</title>
+</head>
+
+<body>
+
+    <div class="container main-container mt-4">
+        <h1>Costume Inventory Management</h1>
+        <button id="show-inventory" class="btn btn-primary">Hide Current Inventory</button>
+        <div class="inventory-container expand">
+            <h2>Current Costume Inventory</h2>
+            <div class="filter">
+                <select name="filter-list" class="filter-list">
+                    <option value="all" selected>All</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="unisex">Unisex</option>
+                    <option value="adult">Adult</option>
+                    <option value="child">Child</option>
+                    <option value="infant">Infant</option>
+                </select>
+            </div>
+            <table id="inventory-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Character</th>
+                        <th>Gender</th>
+                        <th>Size</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="costume-list"></tbody>
+            </table>
+        </div>
+        <button id="add-inventory" class="btn btn-primary">Add New Costume To Inventory</button>
+        <div class="form-container">
+            <h2>Add Costume to Inventory</h2>
+            <form id="costume-form">
+                <div class="form-group">
+                    <label for="character">Character:</label>
+                    <input type="text" id="character" class="form-control">
+                </div>
+                <div class="form-group">
+                    <p>Gender:</p>
+                      <input type="radio" id="male" name="gender" value="Male">
+                      <label for="male">Male</label><br>
+                      <input type="radio" id="female" name="gender" value="Female">
+                      <label for="female">Female</label><br>
+                      <input type="radio" id="unisex" name="gender" value="Unisex">
+                      <label for="unisex">Unisex</label>
+                      <input type="radio" id="default-gender" class="hidden" name="gender" value="" checked="checked">
+                      <label for="default-gender" class="hidden"></label>
+                </div>
+                <div class="form-group">
+                    <p>Size:</p>
+                      <input type="radio" id="adult" name="age-group" value="Adult">
+                      <label for="adult">Adult</label><br>
+                      <input type="radio" id="child" name="age-group" value="Child">
+                      <label for="child">Child</label><br>
+                      <input type="radio" id="infant" name="age-group" value="Infant">
+                      <label for="infant">Infant</label>
+                      <input type="radio" id="default-age" class="hidden" name="age-group" value="" checked="checked">
+                      <label for="default-age" class="hidden"></label>
+                </div>
+                <div class="form-group">
+                    <select name="size" id="size">
+                        <option value="X-Small">X-Small</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="XL">XL</option>
+                        <option value="2XL">2XL</option>
+                        <option value="One-Size">One-Size</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="file" id="costume-pic" name="costume-pic">
+                    <!-- <input type="submit"> -->
+                    <!-- <img src="imgPreview" alt="Preview"> -->
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes:</label>
+                    <textarea name="notes" id="notes" class="form-control" rows="5"></textarea>
+                </div>
+                <input type="submit" value="Add Costume" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+    <script src="./js/costumeController.js" type="module"></script>
+</body>
+
+</html>
