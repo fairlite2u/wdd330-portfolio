@@ -37,7 +37,6 @@
                         <th>Gender</th>
                         <th>Size</th>
                         <th>Details</th>
-                        <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -47,15 +46,16 @@
         <button id="add-inventory" class="btn btn-primary">Add New Costume To Inventory</button>
         <div class="form-container">
             <h2>Add Costume to Inventory</h2>
+            <h3>All Fields Are Required</h3>
             <form id="costume-form">
                 <div class="form-group">
                     <label for="character">Character:</label>
-                    <input type="text" id="character" class="form-control">
+                    <input type="text" id="character" class="form-control" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <fieldset>
                         <legend>Gender:</legend>
-                          <input type="radio" id="male" name="gender" value="Male">
+                          <input type="radio" id="male" name="gender" value="Male" required>
                           <label for="male">Male</label><br>
                           <input type="radio" id="female" name="gender" value="Female">
                           <label for="female">Female</label><br>
@@ -69,7 +69,7 @@
                 <fieldset>
                     <legend>Size:</legend>
                     <div class="form-group fieldset-div1">
-                          <input type="radio" id="adult" name="age-group" value="Adult">
+                          <input type="radio" id="adult" name="age-group" value="Adult" required>
                           <label for="adult">Adult</label><br>
                           <input type="radio" id="child" name="age-group" value="Child">
                           <label for="child">Child</label><br>
@@ -78,11 +78,11 @@
                           <input type="radio" id="default-age" class="hidden" name="age-group" value=""
                             checked="checked">
                           <label for="default-age" class="hidden">Other</label>
-
                     </div>
                     <div class="form-group">
-                        <label for="size" class="hidden">Siz:</label>
-                        <select name="size" id="size">
+                        <label for="size" class="hidden">Size:</label>
+                        <select name="size" id="size" required>
+                            <option value="" disabled selected hidden>Select the size:</option>
                             <option value="X-Small">X-Small</option>
                             <option value="Small">Small</option>
                             <option value="Medium">Medium</option>
@@ -96,11 +96,11 @@
                 </fieldset>
                 <div class="form-group">
                     <label for="costume-pic">Picture of costume:</label>
-                    <input type="file" id="costume-pic" name="costume-pic">
+                    <input type="file" id="costume-pic" name="costume-pic" required>
                 </div>
                 <div class="form-group">
                     <label for="notes">Notes:</label>
-                    <textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
+                    <textarea name="notes" id="notes" class="form-control" rows="3" required></textarea>
                 </div>
                 <input type="submit" value="Add Costume" class="btn btn-primary">
             </form>
