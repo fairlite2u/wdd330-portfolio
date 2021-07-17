@@ -24,11 +24,16 @@ h2 {
 }
 
 h1 {
-  font-size: calc(1.2rem + 1.5vw)
+  font-size: calc(1.2rem + 1.5vw);
+  font-weight: 600;
+  background-color: #c2847a;
+  padding: 5px;
+  text-align: center;
 }
 
 h2 {
-  font-size: calc(1.2rem + .9vw)
+  font-size: calc(1.2rem + .9vw);
+  font-weight: 400;
 }
 
 a {
@@ -214,7 +219,37 @@ legend {
 }
 
 select {
+  background-color: #eee0cb;
+  color: #280003;
   margin-left: 13.5px;
+}
+
+input[type='radio']:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #eee0cb;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #faf6f0;
+}
+
+input[type='radio']:checked:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #c2847a;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #faf6f0;
 }
 
 #costume-pic {
