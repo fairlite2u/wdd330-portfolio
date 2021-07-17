@@ -45,3 +45,4 @@ const hikeList = [
   }
   
   export default HikeModel;
+  
