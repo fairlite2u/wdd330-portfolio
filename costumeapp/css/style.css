@@ -116,8 +116,8 @@ table {
 
   width: 100%;
   margin-bottom: 1rem;
-  color: #222;
-  border-color: #dee2e6;
+  color: #280003;
+  border-color: #eee0cb;
 }
 
 .table>:not(caption)>*>* {
