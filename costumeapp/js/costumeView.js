@@ -16,8 +16,8 @@ export default class UI {
             <td>${costume.character}</td>
             <td>${costume.gender}</td>
             <td>${costume.age} ${costume.size}</td>
-            <td><a href="#" class="btn-sm fas fa-info-circle"></td>
-            <td><a href="#" class="btn btn-sm fas fa-edit"></td>
+            <td><a href="#" class="btn-lg fas fa-info-circle btn-info"></td>
+            <td><a href="#" class="btn btn-lg fas fa-edit btn-edit"></td>
             <td><a href="#" class="btn btn-danger btn-sm delete">X</td>
         `;
         row.classList = `costume-row ${costume.gender} ${costume.age}`
