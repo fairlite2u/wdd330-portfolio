@@ -4,33 +4,98 @@ import Store from './costumeModel.js';
 export default class UI {
     static displayCostumes() {
         const costumes = Store.getCostumes();
+        costumes.forEach(costume => {
+            let index = Object(costumes).indexOf(costume);
+            UI.addCostumeToList(costume, index)
+        });
 
-        costumes.forEach(costume => UI.addCostumeToList(costume));
     }
 
-    static addCostumeToList(costume) {
+    static addCostumeToList(costume, index) {
         const list = document.querySelector('#costume-list');
-
         const row = document.createElement('tr');
+        row.classList = "costume-row";
         row.innerHTML = `
             <td>${costume.character}</td>
             <td>${costume.gender}</td>
             <td>${costume.age} ${costume.size}</td>
-            <td><a href="#" class="btn-lg fas fa-info-circle btn-info"></td>
+            <td class="hidden">${index}</td>
+            <td><a href="#"id="costume-info" class="btn-lg fas fa-info-circle btn-info"></td>
+            <td><a href="#" class="btn btn-lg fas fa-edit btn-edit"></td>
             <td><a href="#" class="btn btn-danger btn-lg delete">X</td>
         `;
         row.classList = `costume-row ${costume.gender} ${costume.age}`
         list.appendChild(row);
     }
 
-    static filterCostumes(e) {
+    static showOneCostume(index) {
+        const costumes = Store.getCostumes();
+        const costume = costumes[index];
+        console.log(costume);
+        this.showCostumeDetails(document.querySelector("#costumes"), costume);
+    }
+
+    static showCostumeDetails(parent, costume) {
+            // const invBtn = document.querySelector('#show-inventory');
+            // invBtn.classList.add('hidden');
+            // const formBtn = document.querySelector('#add-inventory');
+            // formBtn.classList.toggle('hidden');
+            const backButton = document.createElement('button');
+            backButton.classList = "btn btn-primary btn-back";
+            backButton.innerHTML = '&lt;- Return to Inventory';
+            const costumeEl = document.createElement('div');
+            costumeEl.classList.add('costume-details');
+            costumeEl.innerHTML = `<h3 id="char-heading">${costume.character}</h3>
+            <ul>
+            <li>Gender: ${costume.gender}</li>
+            <li>Size: ${costume.age} ${costume.size}</li>
+            <li>Notes: ${costume.notes}</li>
+            </ul>
+            <img src=${costume.pic}>`;
+            parent.innerHTML = '';
+            costumeEl.insertBefore(backButton, costumeEl.childNodes[0]);
+            parent.appendChild(costumeEl);
+            // send the button back to the controller to attach a listener
+            return backButton;
+        }
+
+    // static showOneCostume(index) {
+    //     const costumes = Store.getCostumes();
+    //     costumes.forEach(costume => 
+    //     UI.showCostumeDetails(
+    //         document.getElementById("costumes"), index))
+    //     ).onclick = () => {
+    //         UI.displayCostumes;
+    //     };
+    // }
+
+    // static showCostumeDetails(parent, index) {
+    //         const costume = index;
+    //         const backButton = document.createElement('button');
+    //         backButton.classList = "btn btn-primary";
+    //         backButton.innerHTML = '&lt;- Return to Inventory';
+    //         const costumeEl = document.createElement('li');
+    //         costumeEl.classList.add('costume-details');
+    //         costumeEl.innerHTML = `<h3>${costume[character.value]}</h3>
+    //         <ul>
+    //         <li>Gender: ${costume[gender.value]}</li>
+    //         <li>Size: ${costume[age]} ${costume[size]}</li>
+    //         <li>Picture: ${costume[pic]}</li>
+    //         <li>Notes: ${costume[notes]}</li>
+    //         </ul>`;
+    //         parent.innerHTML = '';
+    //         costumeEl.insertBefore(backButton, costumeEl.childNodes[0]);
+    //         parent.appendChild(costumeEl);
+    //         // send the button back to the controller to attach a listener
+    //         return backButton;
+    //     }
+    
+
+    static filterCostumes(el) {
         const list = document.querySelector('#costume-list');
         const costumes = list.childNodes;
-        const row = document.querySelector('.costume-row');
-        console.log(costumes);
-        console.log(e.target.value);
         costumes.forEach(function (costume) {
-            switch (e.target.value) {
+            switch (el.target.value) {
                 case "male":
                     if (costume.classList.contains("Male")) {
                         costume.classList.remove("hidden");
@@ -81,26 +146,11 @@ export default class UI {
     }
 
 
-    static deleteCostume(el) {
-        if (el.classList.contains('delete')) {
-            el.parentElement.parentElement.remove();
-        }
-    }
-
-    static showCostumeDetails(costume) {
-        const costumeDetails = document.querySelector('#costume-details');
-
-        const costumeEl = document.createElement('li');
-        costumeEl.classList = 'costume-details';
-        costumeEl.innerHTML = `<h3>${costume.character}</h3>
-        <ul>
-        <li>Gender: ${costume.gender}</li>
-        <li>Size: ${costume.age} ${costume.size}</li>
-        <li>Picture: ${costume.pic}</li>
-        <li>Notes: ${costume.notes}</li>
-        </ul>`;
-        return costumeEl;
-    }
+    // static deleteCostume(el) {
+    //     if (el.classList.contains('delete')) {
+    //         el.parentElement.parentElement.remove();
+    //     }
+    // }
 
     static showAlert(message, className, divClass) {
         const div = document.createElement('div');
@@ -125,6 +175,7 @@ export default class UI {
         document.querySelector('#costume-form').reset();
     }
 
+    // TODO: be able to edit costumes
     static editCostumeDetails() {
         `<a href="#" class="btn btn-lg fas fa-edit btn-edit">`
     }
