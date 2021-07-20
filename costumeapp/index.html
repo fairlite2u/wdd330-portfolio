@@ -15,6 +15,7 @@
 
     <main class="container main-container mt-4">
         <h1>Costume Inventory Management</h1>
+        <div id="costume-details-div"></div>
         <button id="show-inventory" class="btn btn-primary">Hide Current Inventory</button>
         <div class="inventory-container expand" id="costumes">
             <h2>Current Costume Inventory</h2>
@@ -50,7 +51,7 @@
             <h3>All Fields Are Required</h3>
             <form id="costume-form">
                 <div class="form-group">
-                    <label for="character">Character:</label>
+                    <label for="character" class="form-label">Character:</label>
                     <input type="text" id="character" class="form-control" required aria-required="true">
                 </div>
                 <div class="form-group">
@@ -96,11 +97,12 @@
                     </div>
                 </fieldset>
                 <div class="form-group">
-                    <label for="costume-pic">Picture of costume:</label>
-                    <input type="file" id="costume-pic" name="costume-pic" required>
+                    <label for="picture-file" class="form-label">Picture of costume:</label>
+                    <input type="file" id="picture-file" name="picture-file"><br>
+                    <img id="imgPreview" src="./images/No_Image_Available.jpg" alt="Preview" height="75" width="75">
                 </div>
                 <div class="form-group">
-                    <label for="notes">Notes:</label>
+                    <label for="notes" class="form-label">Notes:</label>
                     <textarea name="notes" id="notes" class="form-control" rows="3" required></textarea>
                 </div>
                 <input type="submit" value="Add Costume" class="btn btn-primary">

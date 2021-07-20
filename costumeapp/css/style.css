@@ -65,11 +65,13 @@ a:hover {
 }
 
 .form-container,
-.inventory-container {
+.inventory-container, 
+.costume-details {
   max-height: 0px;
   overflow: hidden;
   transition: all .3s ease-in-out;
 }
+
 
 .form-container.expand {
   max-height: 750px;
@@ -79,6 +81,14 @@ a:hover {
 .inventory-container.expand {
   max-height: 2000px;
   margin-bottom: 10px;
+}
+
+.costume-details.expand {
+  max-height: 800px;
+}
+
+.char-img img {
+  width:100%;
 }
 
 .hidden {
@@ -101,6 +111,7 @@ a:hover {
   color: #eee0cb;
   background-color: #660007;
   border-color: #660007;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -158,6 +169,12 @@ label {
   display: inline-block;
   font-size: calc(1rem + .2vw);
   margin-bottom: 3px;
+}
+
+legend,
+.form-label {
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 input:focus:invalid:required,
@@ -352,18 +369,26 @@ input[type='radio']:checked:after {
     font-size: 1.1rem;
   }
 
-  legend {
+  legend,
+  .form-label {
     font-size: 1.5rem;
   }
 
   .char-details {
-    max-width: 500px;
+    max-width: 600px;
     display: flex;
   }
 
   .char-details-div,
   .char-img {
-    width: 50%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .char-details-list li {
+    padding-bottom: 40px;
+    font-size:x-large;
   }
 }
 

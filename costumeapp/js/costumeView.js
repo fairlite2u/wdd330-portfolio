@@ -32,19 +32,15 @@ export default class UI {
         const costumes = Store.getCostumes();
         const costume = costumes[index];
         console.log(costume);
-        this.showCostumeDetails(document.querySelector("#costumes"), costume);
+        this.showCostumeDetails(document.querySelector("#costume-details-div"), costume);
     }
 
     static showCostumeDetails(parent, costume) {
-        // const invBtn = document.querySelector('#show-inventory');
-        // invBtn.classList.add('hidden');
-        // const formBtn = document.querySelector('#add-inventory');
-        // formBtn.classList.toggle('hidden');
-        const backButton = document.createElement('button');
-        backButton.classList = "btn btn-primary btn-back";
-        backButton.innerHTML = '&lt;- Return to Inventory';
+        const hideButton = document.createElement('button');
+        hideButton.classList = "btn btn-primary btn-hide";
+        hideButton.innerHTML = 'Close Details';
         const costumeEl = document.createElement('div');
-        costumeEl.classList.add('costume-details');
+        costumeEl.classList = 'costume-details expand';
         costumeEl.innerHTML = `<h3 id="char-heading">${costume.character}</h3>
             <div class="char-details">
             <div class="char-img"><img src=${costume.pic}></div>
@@ -57,10 +53,8 @@ export default class UI {
             </div>
             </div>`;
         parent.innerHTML = '';
-        costumeEl.insertBefore(backButton, costumeEl.childNodes[0]);
+        costumeEl.insertBefore(hideButton, costumeEl.childNodes[0]);
         parent.appendChild(costumeEl);
-        // send the button back to the controller to attach a listener
-        return backButton;
     }
 
     static filterCostumes(el) {
@@ -138,6 +132,7 @@ export default class UI {
 
     static clearFields() {
         document.querySelector('#costume-form').reset();
+        document.querySelector("#imgPreview").setAttribute("src", "./images/No_Image_Available.jpg")
     }
 
     // TODO: be able to edit costumes

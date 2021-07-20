@@ -11,13 +11,6 @@
           return costumes;
       }
 
-      static getCostumeByTarget(index) {
-          const costumes = this.getCostumes();
-          console.log(index);
-          const costume = costumes[index];
-          console.log(costumes[index]);
-      }
-
       static addCostume(costume) {
           const costumes = this.getCostumes();
 
@@ -31,5 +24,22 @@
           costumes.splice(index, 1);
           localStorage.setItem('costumes', JSON.stringify(costumes));
       }
+
+      //   static storePicture(){
+      //     localStorage.setItem("recent-image", reader.result);
+      //     const recentImageDataURL = localStorage.getItem("recent-image");
+      //     if (recentImageDataURL) {
+      //         document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
+      //     }  else {
+      //         document.querySelector("#imgPreview").setAttribute("src", "./images/No_Image_Available.jpg")
+      //     }
+      //   }
+
+    //   static validateSize(input) {
+    //       const fileSize = input.files[0].size / 1024 / 1024; // in MiB
+    //       if (fileSize > 2) {
+    //           alert('File size exceeds 2 MiB');
+    //           // $(file).val(''); //for clearing with Jquery
+    //       }
+    //   }
   }
-  

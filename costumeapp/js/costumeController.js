@@ -31,19 +31,21 @@ document.addEventListener('DOMContentLoaded', UI.displayCostumes);
 // Event: Filter Costume Inventory List
 document.querySelector('.filter-list').addEventListener('click', UI.filterCostumes);
 
-
-// TODO:Get full details to work
 // Event: View Full Costume Details
 document.querySelector('#costume-list').addEventListener('click', (e) => {
-    console.log(e.target);
-    console.log(e.target.parentElement.previousElementSibling.textContent);
     if (e.target.classList.contains('btn-info')) {
         UI.showOneCostume(e.target.parentElement.previousElementSibling.textContent);
     }
-    // Event: Return to Inventory list from full details
-    document.querySelector('.btn-back').addEventListener('click', UI.displayCostumes);
+    // Event: Close full details
+    const costDetails = document.querySelector('#costume-details-div');
+    const detailsList = document.querySelector('.costume-details');
+    if (costDetails.contains(detailsList)) {
+        document.querySelector('.btn-hide').addEventListener('click', function () {
+            const hideDetails = document.querySelector('.costume-details');
+            hideDetails.classList.toggle('expand');
+        })
+    }
 });
-
 
 // Event: Remove a Costume
 document.querySelector('#costume-list').addEventListener('click', (e) => {
@@ -73,14 +75,13 @@ document.querySelector('#add-inventory').addEventListener('click', function () {
 // Event: Add a Costume
 document.querySelector('#costume-form').addEventListener('submit', (e) => {
     // Prevent actual submit
-    e.preventDefault();
-    uploadFile();
+    e.preventDefault();;
     // Get form values
     const character = document.querySelector('#character').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
     const size = document.querySelector('#size option:checked').value;
     const age = document.querySelector('input[name="age-group"]:checked').value;
-    const pic = document.querySelector('#costume-pic').value;
+    const pic = localStorage.getItem("recent-image");
     const notes = document.querySelector('#notes').value;
     console.log(gender);
     // Validate
@@ -101,24 +102,23 @@ document.querySelector('#costume-form').addEventListener('submit', (e) => {
 
         // Clear fields
         UI.clearFields();
+
+        // Refresh page
+        location.reload();
     }
 });
 
-// TODO: Save and load images
-// document.addEventListener("DOMContentLoaded", () => {
-//     const recentImageDataUrl = localStorage.getItem('costume-pic');
-
-//     if (recentImageDataUrl) {
-//         document.querySelector('#imgPreview').setAttribute("src", recentImageDataUrl);
-//     }
-// });
-
-async function uploadFile() {
-    let formData = new FormData();           
-    formData.append("file", costume-pic.files[0]);
-    await fetch('/upload.php', {
-      method: "POST", 
-      body: formData
-    });    
-    alert('The file has been uploaded successfully.');
-}
+// Event: Save and load images
+document.querySelector("#picture-file").addEventListener("change", function () {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        localStorage.setItem("recent-image", reader.result);
+        const recentImageDataURL = localStorage.getItem("recent-image");
+        if (recentImageDataURL) {
+            document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
+        }  else {
+            document.querySelector("#imgPreview").setAttribute("src", "./images/No_Image_Available.jpg")
+        }
+    })
+    reader.readAsDataURL(this.files[0]);
+});
