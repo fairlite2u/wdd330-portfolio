@@ -144,7 +144,7 @@ table {
   border-bottom-width: 1px;
 }
 
-tbody tr:nth-child(odd) {
+tbody tr:nth-child(2n + 1) {
   background-color: #eee0cb;
 }
 
@@ -273,6 +273,17 @@ textarea:focus:invalid:required {
   margin-bottom: 16px;
 }
 
+#form-required,
+#p-file-size {
+  color:#8f000a;
+  font-weight: 400;
+}
+
+#p-file-size {
+  margin: 0 0 5px 0;
+  font-size: .85rem;
+}
+
 fieldset {
   min-width: 0;
   padding: 0;
@@ -331,6 +342,15 @@ input[type='radio']:checked:after {
   margin-left: 13.5px;
 }
 
+.warning {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #faf6f0;
+  background-color: #cc000e;
+  padding:5px;
+
+}
+
 .alert {
   color: #eee0cb;
   font-size: 1rem;
@@ -366,6 +386,10 @@ input[type='radio']:checked:after {
   }
 
   table {
+    font-size: 1.1rem;
+  }
+
+  #p-file-size {
     font-size: 1.1rem;
   }
 

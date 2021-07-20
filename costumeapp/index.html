@@ -48,7 +48,7 @@
         <button id="add-inventory" class="btn btn-primary">Add New Costume To Inventory</button>
         <div class="form-container">
             <h2>Add Costume to Inventory</h2>
-            <h3>All Fields Are Required</h3>
+            <h3 id="form-required">All Fields Are Required</h3>
             <form id="costume-form">
                 <div class="form-group">
                     <label for="character" class="form-label">Character:</label>
@@ -98,7 +98,9 @@
                 </fieldset>
                 <div class="form-group">
                     <label for="picture-file" class="form-label">Picture of costume:</label>
-                    <input type="file" id="picture-file" name="picture-file"><br>
+                   <p id="p-file-size">File size must be smaller than 1.1 Mb</p>
+                   <div id="picMessage"></div>
+                    <input type="file" id="picture-file" name="picture-file"><br><br>
                     <img id="imgPreview" src="./images/No_Image_Available.jpg" alt="Preview" height="75" width="75">
                 </div>
                 <div class="form-group">

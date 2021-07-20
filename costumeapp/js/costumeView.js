@@ -33,6 +33,7 @@ export default class UI {
         const costume = costumes[index];
         console.log(costume);
         this.showCostumeDetails(document.querySelector("#costume-details-div"), costume);
+        window.scrollTo(0,0);
     }
 
     static showCostumeDetails(parent, costume) {

@@ -122,3 +122,33 @@ document.querySelector("#picture-file").addEventListener("change", function () {
     })
     reader.readAsDataURL(this.files[0]);
 });
+
+
+document.getElementById("picture-file").addEventListener("change", function showFileSize() {
+    // (Can't use `typeof FileReader === "function"` because apparently it
+    // comes back as "object" on some browsers. So just see if it's there
+    // at all.)
+    const input = document.getElementById('picture-file');
+    const file = input.files[0];
+    const size = file.size/1024/1024
+    if (!file) { // This is VERY unlikely, browser support is near-universal
+        console.error("This browser doesn't seem to support the `files` property of file inputs.");
+    } else if (!file) {
+        addPara("Please select a file.");
+    } else if (size > 1.1) {
+        addPara(file.name + " is " + size.toFixed(2) + " Mb in size. Please choose a file smaller than 1 Mb.");
+        document.querySelector('#picture-file').value = "";
+    } else {
+        addPara("File add successful");
+    }
+});
+
+function addPara(text) {
+    const p = document.createElement("p");
+    p.classList.add('warning');
+    p.textContent = text;
+    const picMessage = document.querySelector("#picMessage");
+    picMessage.appendChild(p);
+    // Vanish in 2.5 seconds
+    setTimeout(() => document.querySelector('.warning').remove(), 2500);
+}
