@@ -36,7 +36,7 @@ document.querySelector('.filter-list').addEventListener('click', UI.filterCostum
 // Event: View Full Costume Details
 document.querySelector('#costume-list').addEventListener('click', (e) => {
     console.log(e.target);
-    console.log(e.target.parentElement.previousElementSibling.textContent)
+    console.log(e.target.parentElement.previousElementSibling.textContent);
     if (e.target.classList.contains('btn-info')) {
         UI.showOneCostume(e.target.parentElement.previousElementSibling.textContent);
     }
@@ -74,7 +74,7 @@ document.querySelector('#add-inventory').addEventListener('click', function () {
 document.querySelector('#costume-form').addEventListener('submit', (e) => {
     // Prevent actual submit
     e.preventDefault();
-
+    uploadFile();
     // Get form values
     const character = document.querySelector('#character').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
@@ -112,3 +112,13 @@ document.querySelector('#costume-form').addEventListener('submit', (e) => {
 //         document.querySelector('#imgPreview').setAttribute("src", recentImageDataUrl);
 //     }
 // });
+
+async function uploadFile() {
+    let formData = new FormData();           
+    formData.append("file", costume-pic.files[0]);
+    await fetch('/upload.php', {
+      method: "POST", 
+      body: formData
+    });    
+    alert('The file has been uploaded successfully.');
+}

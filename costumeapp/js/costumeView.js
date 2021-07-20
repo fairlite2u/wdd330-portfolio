@@ -20,7 +20,7 @@ export default class UI {
             <td>${costume.gender}</td>
             <td>${costume.age} ${costume.size}</td>
             <td class="hidden">${index}</td>
-            <td><a href="#"id="costume-info" class="btn-lg fas fa-info-circle btn-info"></td>
+            <td><a href="#" id="costume-info" class="btn-lg fas fa-info-circle btn-info"></td>
             <td><a href="#" class="btn btn-lg fas fa-edit btn-edit"></td>
             <td><a href="#" class="btn btn-danger btn-lg delete">X</td>
         `;
@@ -36,60 +36,32 @@ export default class UI {
     }
 
     static showCostumeDetails(parent, costume) {
-            // const invBtn = document.querySelector('#show-inventory');
-            // invBtn.classList.add('hidden');
-            // const formBtn = document.querySelector('#add-inventory');
-            // formBtn.classList.toggle('hidden');
-            const backButton = document.createElement('button');
-            backButton.classList = "btn btn-primary btn-back";
-            backButton.innerHTML = '&lt;- Return to Inventory';
-            const costumeEl = document.createElement('div');
-            costumeEl.classList.add('costume-details');
-            costumeEl.innerHTML = `<h3 id="char-heading">${costume.character}</h3>
-            <ul>
+        // const invBtn = document.querySelector('#show-inventory');
+        // invBtn.classList.add('hidden');
+        // const formBtn = document.querySelector('#add-inventory');
+        // formBtn.classList.toggle('hidden');
+        const backButton = document.createElement('button');
+        backButton.classList = "btn btn-primary btn-back";
+        backButton.innerHTML = '&lt;- Return to Inventory';
+        const costumeEl = document.createElement('div');
+        costumeEl.classList.add('costume-details');
+        costumeEl.innerHTML = `<h3 id="char-heading">${costume.character}</h3>
+            <div class="char-details">
+            <div class="char-img"><img src=${costume.pic}></div>
+            <div class="char-details-div">
+            <ul class="char-details-list">
             <li>Gender: ${costume.gender}</li>
             <li>Size: ${costume.age} ${costume.size}</li>
             <li>Notes: ${costume.notes}</li>
             </ul>
-            <img src=${costume.pic}>`;
-            parent.innerHTML = '';
-            costumeEl.insertBefore(backButton, costumeEl.childNodes[0]);
-            parent.appendChild(costumeEl);
-            // send the button back to the controller to attach a listener
-            return backButton;
-        }
-
-    // static showOneCostume(index) {
-    //     const costumes = Store.getCostumes();
-    //     costumes.forEach(costume => 
-    //     UI.showCostumeDetails(
-    //         document.getElementById("costumes"), index))
-    //     ).onclick = () => {
-    //         UI.displayCostumes;
-    //     };
-    // }
-
-    // static showCostumeDetails(parent, index) {
-    //         const costume = index;
-    //         const backButton = document.createElement('button');
-    //         backButton.classList = "btn btn-primary";
-    //         backButton.innerHTML = '&lt;- Return to Inventory';
-    //         const costumeEl = document.createElement('li');
-    //         costumeEl.classList.add('costume-details');
-    //         costumeEl.innerHTML = `<h3>${costume[character.value]}</h3>
-    //         <ul>
-    //         <li>Gender: ${costume[gender.value]}</li>
-    //         <li>Size: ${costume[age]} ${costume[size]}</li>
-    //         <li>Picture: ${costume[pic]}</li>
-    //         <li>Notes: ${costume[notes]}</li>
-    //         </ul>`;
-    //         parent.innerHTML = '';
-    //         costumeEl.insertBefore(backButton, costumeEl.childNodes[0]);
-    //         parent.appendChild(costumeEl);
-    //         // send the button back to the controller to attach a listener
-    //         return backButton;
-    //     }
-    
+            </div>
+            </div>`;
+        parent.innerHTML = '';
+        costumeEl.insertBefore(backButton, costumeEl.childNodes[0]);
+        parent.appendChild(costumeEl);
+        // send the button back to the controller to attach a listener
+        return backButton;
+    }
 
     static filterCostumes(el) {
         const list = document.querySelector('#costume-list');
@@ -144,13 +116,6 @@ export default class UI {
             }
         });
     }
-
-
-    // static deleteCostume(el) {
-    //     if (el.classList.contains('delete')) {
-    //         el.parentElement.parentElement.remove();
-    //     }
-    // }
 
     static showAlert(message, className, divClass) {
         const div = document.createElement('div');
