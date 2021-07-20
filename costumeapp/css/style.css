@@ -276,6 +276,7 @@ textarea:focus:invalid:required {
 #form-required,
 #p-file-size {
   color:#8f000a;
+  background-color: #c6b7a9;
   font-weight: 400;
 }
 
