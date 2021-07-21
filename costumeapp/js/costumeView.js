@@ -42,7 +42,7 @@ export default class UI {
         hideButton.innerHTML = 'Close Details';
         const costumeEl = document.createElement('div');
         costumeEl.classList = 'costume-details expand';
-        costumeEl.innerHTML = `<h3 id="char-heading">${costume.character}</h3>
+        costumeEl.innerHTML = `<h2 id="char-heading">${costume.character}</h2>
             <div class="char-details">
             <div class="char-img"><img src=${costume.pic} alt="Picture of Costume"></div>
             <div class="char-details-div">
