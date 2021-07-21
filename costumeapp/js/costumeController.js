@@ -34,7 +34,8 @@ document.querySelector('.filter-list').addEventListener('click', UI.filterCostum
 // Event: View Full Costume Details
 document.querySelector('#costume-list').addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-info')) {
-        UI.showOneCostume(e.target.parentElement.previousElementSibling.textContent);
+        console.log(e.target);
+        UI.showOneCostume(e.target.parentElement.parentElement.previousElementSibling.textContent);
     }
     // Event: Close full details
     const costDetails = document.querySelector('#costume-details-div');
@@ -63,7 +64,7 @@ document.querySelector('#costume-list').addEventListener('click', (e) => {
             document.querySelector('#add-inventory').innerText = "Edit Costume In Inventory";
             document.querySelector('#add-heading').innerText = "Edit Costume Details";
         }
-        UI.editOneCostume(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+        UI.editOneCostume(e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.textContent);
     }
 });
 
@@ -139,10 +140,10 @@ document.querySelector('.cancel-btn').addEventListener('click', () => {
 document.querySelector('#costume-list').addEventListener('click', (e) => {
     if (e.target.classList.contains('delete')) {
         // Remove costume from UI
-        e.target.parentElement.parentElement.remove();
+        e.target.parentElement.parentElement.parentElement.remove();
 
         // Remove costume from store
-        Store.removeCostume(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+        Store.removeCostume(e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent);
 
         // Show success message
         UI.showAlert('Costume Removed', 'success', 'inventory');

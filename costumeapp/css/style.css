@@ -43,10 +43,6 @@ h3 {
   font-weight: 200;
 }
 
-/* a {
-  height: 65px;
-} */
-
 .container {
   width: 100%;
   padding-right: var(--bs-gutter-x, .75rem);
