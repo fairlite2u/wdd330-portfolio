@@ -135,7 +135,15 @@ export default class UI {
         document.querySelector('#costume-form').reset();
         document.querySelector("#imgPreview").setAttribute("src", "./images/No_Image_Available.jpg")
     }
-
+    static addPara(text) {
+        const p = document.createElement("p");
+        p.classList.add('warning');
+        p.textContent = text;
+        const picMessage = document.querySelector("#picMessage");
+        picMessage.appendChild(p);
+        // Vanish in 2.5 seconds
+        setTimeout(() => document.querySelector('.warning').remove(), 2500);
+    }
     // TODO: be able to edit costumes
     static editCostumeDetails() {
         `<a href="#" class="btn btn-lg fas fa-edit btn-edit">`
