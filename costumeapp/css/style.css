@@ -137,10 +137,6 @@ table {
   border-bottom-width: 1px;
 }
 
-tbody tr:nth-child(2n + 1) {
-  background-color: #eee0cb;
-}
-
 tbody,
 th,
 thead,
@@ -158,9 +154,14 @@ th#edit {
   padding-left: .7rem;
 }
 
+tbody tr {
+  background-color: #eee0cb;
+}
+
+
 tbody,
 tbody tr {
-  border: 2px dashed #eee0cb;
+  border: 2.5px solid #baa898;
 }
 label {
   display: inline-block;
