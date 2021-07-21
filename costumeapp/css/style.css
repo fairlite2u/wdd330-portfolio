@@ -160,7 +160,7 @@ th#edit {
 
 tbody,
 tbody tr {
-  border: 2px solid #eee0cb;
+  border: 2px dashed #eee0cb;
 }
 label {
   display: inline-block;
