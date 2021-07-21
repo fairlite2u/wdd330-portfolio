@@ -44,7 +44,7 @@ export default class UI {
         costumeEl.classList = 'costume-details expand';
         costumeEl.innerHTML = `<h3 id="char-heading">${costume.character}</h3>
             <div class="char-details">
-            <div class="char-img"><img src=${costume.pic}></div>
+            <div class="char-img"><img src=${costume.pic} alt="Picture of Costume"></div>
             <div class="char-details-div">
             <ul class="char-details-list">
             <li>Gender: ${costume.gender}</li>

@@ -247,7 +247,7 @@ textarea:focus:invalid:required {
   display: block;
   margin: auto;
   justify-content: center;
-  max-width: 250px;
+  max-width: 275px;
   overflow-wrap: break-word;
 }
 
