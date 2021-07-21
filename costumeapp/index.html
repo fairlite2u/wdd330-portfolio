@@ -48,7 +48,7 @@
         </div>
         <button id="add-inventory" class="btn btn-primary">Add New Costume To Inventory</button>
         <div class="form-container">
-            <h2>Add Costume to Inventory</h2>
+            <h2 id="add-heading">Add Costume Details</h2>
             <h3 id="form-required">All Fields Are Required</h3>
             <form id="costume-form">
                 <div class="form-group">
@@ -108,7 +108,12 @@
                     <label for="notes" class="form-label">Notes:</label>
                     <textarea name="notes" id="notes" class="form-control" rows="3" required></textarea>
                 </div>
-                <input type="submit" value="Add Costume" class="btn btn-primary">
+                <div class="form-group">
+                    <input type="text" id="index" name="index" class="index-input" hidden>
+                </div>
+                <input type="submit" value="Add Costume" class="btn btn-primary add-btn">
+                <input type="submit" value="Edit Costume" class="btn btn-primary edit-btn hidden">
+                <input type="button" value="Cancel" class="btn btn-primary cancel-btn hidden">
             </form>
         </div>
     </main>

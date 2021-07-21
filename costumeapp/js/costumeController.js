@@ -52,14 +52,65 @@ document.querySelector('#costume-list').addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-edit')) {
         const inventoryBtn = document.querySelector('.inventory-container');
         inventoryBtn.classList.toggle('expand');
+        if (inventoryBtn.classList.contains('expand')) {
+            document.querySelector('#show-inventory').innerText = "Hide Current Inventory";
+        } else {
+            document.querySelector('#show-inventory').innerText = "Show Current Inventory";
+        }
         const showFormBtn = document.querySelector('.form-container');
         if (!showFormBtn.classList.contains('expand')) {
         showFormBtn.classList.toggle('expand');
+        document.querySelector('#add-inventory').innerText = "Edit Costume In Inventory";
+        document.querySelector('#add-heading').innerText = "Edit Costume Details";
         }
-        console.log(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
         UI.editOneCostume(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
     }
 });
+
+// Event: Submit Costume edit
+document.querySelector(".edit-btn").addEventListener('click', (e) => {
+    e.preventDefault();
+    // Get form values
+    const character = document.querySelector('#character').value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const size = document.querySelector('#size option:checked').value;
+    const age = document.querySelector('input[name="age-group"]:checked').value;
+    const pic = localStorage.getItem("recent-image");
+    const notes = document.querySelector('#notes').value;
+    const index = document.querySelector('#index').value;
+    // Validate
+    if (character === '' | gender === '' | size === '' | age === '' | pic === '' | notes === '') {
+        UI.showAlert('Please fill in all fields', 'danger', 'form');
+    } else {
+        // Instantiate costume
+        const costume = new Costume(character, gender, size, age, pic, notes);
+        // Expand, close, and fix headings
+        const inventoryBtn = document.querySelector('.inventory-container');
+        inventoryBtn.classList.toggle('expand');
+        document.querySelector('#add-inventory').innerText = "Add Costume to Inventory";
+        document.querySelector('#add-heading').innerText = "Add Costume Details";
+        document.querySelector('.add-btn').classList.toggle('hidden');
+        document.querySelector('.edit-btn').classList.toggle('hidden');
+        document.querySelector('.cancel-btn').classList.toggle('hidden');
+        // Add Costume to UI
+        UI.addCostumeToList(costume, index);
+
+        // Add costume to store
+        Store.editCostume(costume, index);
+
+        // Show success message
+        UI.showAlert('Costume Updated', 'success', 'form');
+
+        // Clear fields
+        UI.clearFields();
+
+        // Refresh page
+        location.reload();
+    }
+});
+
+// TODO:
+// Event: Cancel Edit Costume
 
 // Event: Remove a Costume
 document.querySelector('#costume-list').addEventListener('click', (e) => {
@@ -89,7 +140,7 @@ document.querySelector('#add-inventory').addEventListener('click', function () {
 // Event: Add a Costume
 document.querySelector('#costume-form').addEventListener('submit', (e) => {
     // Prevent actual submit
-    e.preventDefault();;
+    e.preventDefault();
     // Get form values
     const character = document.querySelector('#character').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
@@ -97,7 +148,6 @@ document.querySelector('#costume-form').addEventListener('submit', (e) => {
     const age = document.querySelector('input[name="age-group"]:checked').value;
     const pic = localStorage.getItem("recent-image");
     const notes = document.querySelector('#notes').value;
-    console.log(gender);
     // Validate
     if (character === '' | gender === '' | size === '' | age === '' | pic === '' | notes === '') {
         UI.showAlert('Please fill in all fields', 'danger', 'form');

@@ -12,9 +12,13 @@
 
       static addCostume(costume) {
           const costumes = this.getCostumes();
-
           costumes.push(costume);
+          localStorage.setItem('costumes', JSON.stringify(costumes));
+      }
 
+      static editCostume(costume, index) {
+          const costumes = this.getCostumes();
+          costumes.splice(index, 1, costume);
           localStorage.setItem('costumes', JSON.stringify(costumes));
       }
 

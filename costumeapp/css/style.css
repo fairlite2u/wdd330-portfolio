@@ -74,7 +74,7 @@ a:hover {
 
 
 .form-container.expand {
-  max-height: 750px;
+  max-height: 900px;
   margin-bottom: 50px;
 }
 
@@ -95,10 +95,6 @@ a:hover {
 .char-img {
   display: flex;
 justify-content: center;
-}
-
-.hidden {
-  display: none;
 }
 
 .btn {
@@ -381,6 +377,10 @@ input[type='radio']:checked:after {
 .alert-danger {
   background-color: #a3000b;
   border-color: #cc000e;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (min-width:800px) {

@@ -58,13 +58,15 @@ export default class UI {
     }
 
     static editOneCostume(index) {
+        document.querySelector('.add-btn').classList.toggle('hidden');
+        document.querySelector('.edit-btn').classList.toggle('hidden');
+        document.querySelector('.cancel-btn').classList.toggle('hidden');
         const costumes = Store.getCostumes();
         const costume = costumes[index];
-        console.log(costume);
-        this.editCostumeDetails(costume);
+        this.editCostumeDetails(costume, index);
     }
 
-    static editCostumeDetails(costume) {
+    static editCostumeDetails(costume, index) {
         document.querySelector('#character').value = costume.character;
         const radioGender = document.getElementsByName('gender');
         for (let i = 0; i < radioGender.length; i++) {
@@ -85,8 +87,9 @@ export default class UI {
         picMessage.innerText="When editing a costume, the picture must be uploaded again.";
         picMessageDiv.appendChild(picMessage);
         document.querySelector('#notes').value = costume.notes;
-
+        document.querySelector('#index').value = index;
     }
+
     static filterCostumes(el) {
         const list = document.querySelector('#costume-list');
         const costumes = list.childNodes;
