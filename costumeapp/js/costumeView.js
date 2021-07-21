@@ -58,9 +58,6 @@ export default class UI {
     }
 
     static editOneCostume(index) {
-        document.querySelector('.add-btn').classList.toggle('hidden');
-        document.querySelector('.edit-btn').classList.toggle('hidden');
-        document.querySelector('.cancel-btn').classList.toggle('hidden');
         const costumes = Store.getCostumes();
         const costume = costumes[index];
         this.editCostumeDetails(costume, index);

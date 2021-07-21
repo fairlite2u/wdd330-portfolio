@@ -34,7 +34,6 @@ document.querySelector('.filter-list').addEventListener('click', UI.filterCostum
 // Event: View Full Costume Details
 document.querySelector('#costume-list').addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-info')) {
-        console.log(e.target);
         UI.showOneCostume(e.target.parentElement.parentElement.previousElementSibling.textContent);
     }
     // Event: Close full details
@@ -63,6 +62,18 @@ document.querySelector('#costume-list').addEventListener('click', (e) => {
             showFormBtn.classList.toggle('expand');
             document.querySelector('#add-inventory').innerText = "Edit Costume In Inventory";
             document.querySelector('#add-heading').innerText = "Edit Costume Details";
+        }
+        document.querySelector('.add-btn').classList.toggle('hidden');
+        document.querySelector('.edit-btn').classList.toggle('hidden');
+        document.querySelector('.cancel-btn').classList.toggle('hidden');
+        // Event: Close full details
+        const costDetails = document.querySelector('#costume-details-div');
+        const detailsList = document.querySelector('.costume-details');
+        if (costDetails.contains(detailsList)) {
+            const hideDetails = document.querySelector('.costume-details');
+            if (hideDetails.classList.contains('expand')) {
+                hideDetails.classList.toggle('expand');
+            }
         }
         UI.editOneCostume(e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.textContent);
     }
