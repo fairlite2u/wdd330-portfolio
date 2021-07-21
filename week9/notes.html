@@ -38,7 +38,7 @@
             <li>The <code>window</code> object has a number of properties and methods that provide information about the
                 user's browser including <code>navigator</code> and <code>location</code>. These also have their own
                 properties that provide more information, including:</li>
-            <ul>
+            <li><ul>
                 <li><code>window.navigator.userAgent</code> - Returns information about the brower and operating system
                     being used. This property has been deprecated from the official specification, but remains well
                     supported in all major browsers.</li>
@@ -49,7 +49,7 @@
                 <li><code>window.location.pathname</code> - Returns a string of the path that follows the domain.</li>
                 <li><code>window.location.assign()</code> - Can be used to load another resource from a URL provided as
                     a parameter.</li>
-            </ul>
+            </ul></li>
             <li>Most of those properties are read/write, which means they can also be changed by assignment.</li>
             <li>The <code>window.history</code> property can be used to access information about any previously visited
                 pages in the current browser session, not to be confused with the HTML5 History API.</li>
@@ -62,7 +62,7 @@
         <ul>
             <li>The <code>document</code> object has properties and methods that deal with the page that has been loaded
                 into the window. Here are a few methods worth looking at:</li>
-            <ul>
+            <li><ul>
                 <li><code>document.write</code> - Writes a string of text to the page. If a page has already loaded, it
                     will completely replace the current document. You can also include HTML in the string and it will
                     become part of the DOM tree. Placing the method within a document inside <code>&lt;script&gt;</code> tags
@@ -75,7 +75,7 @@
                     HTML5 localStorage API in many cases, but cookies are still useful for retaining state information
                     such as if a user is logged in.</li>
                 <li><code>document.write</code></li>
-            </ul>
+            </ul></li>
         </ul>
         <h3>Timing Functions</h3>
         <ul>
@@ -98,11 +98,11 @@
             <li>A way of embedding data in a web page using custom attributes that are ignored by the browser.</li>
             <li>They are private to a page, so are not intended to be used by an external service - their sole purpose is to be used by a JavaScript program.</li>
             <li>When naming these attributes, they must use the following format:</li>
-            <ul>
+            <li><ul>
                 <li>Start with <code>date-</code>.</li>
                 <li>Contain only lowercase letters, numbers, hyphens, dots, colons, or underscores.</li>
                 <li>Include an optional string value.</li>
-            </ul>
+            </ul></li>
         </ul>
         <h3>HTML5 Web Storage</h3>
         <ul>
@@ -110,11 +110,11 @@
             <li>Browsers that support the Web Storage API have a <code>window</code> object property called <code>localStorage</code> that has several properties and methods that are used to store data.</li>
             <li>There is also a <code>sessionStorage</code> object that works like <code>localStorage</code> but the data is only saved for the current session.</li>
             <li>Basics of using <code>localStorage</code>:</li>
-            <ul>
+            <li><ul>
                 <li>To set and item and then retrieve it's value, you can use <code>localStorage.setItem('name', 'value')</code> and <code>localStorage.getItem('name')</code>.</li>
                 <li>Alternatively, you can use assignment, for example: <code>localStorage.name = 'value'</code>.</li>
                 <li>To remove something from local storage you can use the <code>removeItem</code> method or the <code>delete</code> operator or you can remove everything using the <code>clear</code> method.</li>
-            </ul>
+            </ul></li>
         </ul>
         <h3>Geolocation</h3>
         <ul>

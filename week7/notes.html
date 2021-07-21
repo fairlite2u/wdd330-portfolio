@@ -24,13 +24,13 @@
         <ul>
             <li>Cross Origin Resource Sharing or CORS is an HTTP-header based mechanism that allows a server to indicate any other origins than its own from which a browser should permit loading of resources.</li>
             <li>Simple requests must meet the following conditions:</li>
-            <ul>
+            <li><ul>
                 <li>One of the allowed methods: GET, HEAD, or POST.</li>
                 <li>Only these headers are allowed to be manually set: Accept, Accept-Language, Content-Language, and Content-Type.</li>
                 <li>The only allowed values for the Content-Type header are: application/x-www-form-urlencoded, multipart/form-data, and text/plain.</li>
                 <li>If the request is made using an XMLHttpRequest object, no event listeners are registered on the object returned by the XMLHttpRequest.upload property used in the request.</li>
                 <li>No ReadableStream object is used in the request.</li>
-            </ul>
+            </ul></li>
             <li>For Preflighted requests, the browser first sends an HTTP request using the OPTIONS method to the resource on the other origin, in order to determine if the actual request is safe to send.</li>
             <li>Requests with credentials require a specific flag to be set on the XMLHttpRequest object or the Request constructor.</li>
 

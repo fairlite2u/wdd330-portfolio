@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Form validation: Task 3</title>
-    <style>
-      body {
-        background-color: #fff;
-        color: #333;
-        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
-        padding: 1em;
-        margin: 0;
-      }
 
-      * {
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="utf-8" />
+  <title>Form validation: Task 3</title>
+  <style>
+    body {
+      background-color: #fff;
+      color: #333;
+      font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+      padding: 1em;
+      margin: 0;
+    }
 
-        /* This is our style for the invalid fields */
-        input:invalid {
-            border-color: #900;
-            background-color: #FDD;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        input:focus:invalid {
-            outline: none;
-        }
+    /* This is our style for the invalid fields */
+    input:invalid {
+      border-color: #900;
+      background-color: #FDD;
+    }
 
-        /* This is the style of our error messages */
-        .error {
-            width: 100%;
-            padding: 0;
-            font-size: 80%;
-            color: white;
-            background-color: #900;
-            border-radius: 0 0 5px 5px;
-            box-sizing: border-box;
-        }
+    input:focus:invalid {
+      outline: none;
+    }
 
-        .error.active {
-            padding: 0.3em;
-        }
-    </style>
-  </head>
+    /* This is the style of our error messages */
+    .error {
+      width: 100%;
+      padding: 0;
+      font-size: 80%;
+      color: white;
+      background-color: #900;
+      border-radius: 0 0 5px 5px;
+      box-sizing: border-box;
+    }
 
-  <body>
-    <form>
-      <label for="mail">I would like you to provide me with an e-mail address:</label>
-      <input type="email" id="mail" name="mail" required minlength="10">
-      <button>Submit</button>
-    </form>
-  </body>
+    .error.active {
+      padding: 0.3em;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <label for="mail">I would like you to provide me with an e-mail address:</label>
+    <input type="email" id="mail" name="mail" required minlength="10">
+    <button>Submit</button>
+  </form>
   <script>
     const email = document.getElementById("mail");
-
-    email.addEventListener('input', function(event) {
-        if(email.validity.typeMismatch) {
-            email.setCustomValidity('Did you enter an e-mail address?');
-        } else if(email.validity.tooShort) {
-            email.setCustomValidity('Your e-mail address is too short.');
-        } else {
-            email.setCustomValidity('');
-        }
+  
+    email.addEventListener('input', function (event) {
+      if (email.validity.typeMismatch) {
+        email.setCustomValidity('Did you enter an e-mail address?');
+      } else if (email.validity.tooShort) {
+        email.setCustomValidity('Your e-mail address is too short.');
+      } else {
+        email.setCustomValidity('');
+      }
     });
-
   </script>
+</body>
 
 </html>

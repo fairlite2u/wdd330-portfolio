@@ -30,18 +30,18 @@
             <li>Validation done in the browser is called client-side validation, while validation done on the server is
                 called server-side validation.</li>
             <li>Why should forms be validated?</li>
-            <ul>
+            <li><ul>
                 <li>To get the right data, in the right format.</li>
                 <li>To protect user's data.</li>
                 <li>To protect ourselves.</li>
-            </ul>
+            </ul></li>
         </ul>
 
         <h3>Using built-in HTML5 form validation</h3>
         <ul>
             <li>Most user data can be validated without relying on JavaScript using HTML5 form controls like
                 <code>required</code>, <code>minlength</code> and <code>maxlength</code>, <code>min</code> and
-                <code>max</code>, <code>type</code>, and <code>pattern</code>.</code></li>
+                <code>max</code>, <code>type</code>, and <code>pattern</code>.</li>
             <li>If the data follows all the rules specified and validates, the browser will submit the form. If anything
                 is still invalid, the browser will block the form and display an error message.</li>
             <li>CSS can be used to change styling on form fields that aren't valid with the <code>:invalid</code>
@@ -56,17 +56,17 @@
                 DOM interfaces and make it easier to customize error messages.</li>
             <li>You can also validate form without a built-in API by writing your own JavaScript. In these situations,
                 you should ask yourself a few questions:</li>
-            <ul>
+            <li><ul>
                 <li>What kind of validation should I perform?</li>
                 <li>What should I do if the form doesn't validate?</li>
                 <li>How can I help the user to correct invalid data?</li>
-            </ul>
+            </ul></li>
             <li>When it comes to client-side form validation, always remember to think carefully about the user</li>
-            <ul>
+            <li><ul>
                 <li>Display explicit error messages.</li>
                 <li>Be permissive about the input format.</li>
                 <li>Point out exactly where the error occurs, expecially on large forms.</li>
-            </ul>
+            </ul></li>
         </ul>
         <br>
 
@@ -75,8 +75,8 @@
         <ul>
             <li>The Fetch API provides a JavaScript interface for accession and manipulation parts of the HTTP pipeline,
                 such as request and responses.</li>
-            <li>The simplest use of <code>fetch()</code> takes one argument &#8212 the path to the resource you want to
-                fetch &#8212 and returns a promise containing the response.</li>
+            <li>The simplest use of <code>fetch()</code> takes one argument &#8212; the path to the resource you want to
+                fetch &#8212; and returns a promise containing the response.</li>
             <li>Fetch requests are controlled by the <code>connect-src</code> directive of Content Security Policy
                 rather than the directive of the resources it's retrieving.</li>
             <li>The <code>fetch()</code> method can optionally accept a second parameter, an <code>init</code> object
@@ -90,14 +90,14 @@
                 <li><code>Response</code> instances are returned when <code>fetch()</code> promises are resolved.</li>
                 <li>The most common response properties you'll use are: <code>Response.status, Response.statusText,</code> and <code>Response.ok</code>.</li>
                 <li>Bothe request and responses may contain body data. A body is a instance of any of the following types:</li>
-                <ul>
+                <li><ul>
                     <li><code>ArrayBuffer</code></li>
                     <li><code>ArrayBufferView</code></li>
                     <li><code>Blob</code>/File</li>
                     <li>string</li>
                     <li><code>URLSearchParams</code></li>
                     <li><code>FormData</code></li>
-                </ul>
+                </ul></li>
                 <li>Both request and response will try to intelligently determine the content type.</li>
                 <li>Fetch API support can be detected by checking for the existence of <code>Headers, Request, Response,</code> or <code>fetch()</code> on the <code>Window</code> or <code>Worker</code> scope.</li>
 

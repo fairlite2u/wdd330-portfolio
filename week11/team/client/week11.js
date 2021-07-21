@@ -17,7 +17,7 @@ async function getPosts() {
   try {
     const data = await makeRequest('posts', 'GET', null, auth.token);
     // make sure the element is shown
-    document.getElementById('content').classList.remove('hidden');
+    document.getElementById('content-div').classList.remove('hidden');
     console.log(data);
     const ul = document.getElementById('list');
     ul.innerHTML = '';
