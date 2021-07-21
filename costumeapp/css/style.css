@@ -88,7 +88,13 @@ a:hover {
 }
 
 .char-img img {
-  width:100%;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.char-img {
+  display: flex;
+justify-content: center;
 }
 
 .hidden {
@@ -402,6 +408,11 @@ input[type='radio']:checked:after {
   .char-details {
     max-width: 600px;
     display: flex;
+  }
+
+  .char-img img {
+    max-width: 400px;
+    max-height: 400px;
   }
 
   .char-details-div,
