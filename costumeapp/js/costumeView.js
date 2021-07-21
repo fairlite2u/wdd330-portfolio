@@ -31,9 +31,8 @@ export default class UI {
     static showOneCostume(index) {
         const costumes = Store.getCostumes();
         const costume = costumes[index];
-        console.log(costume);
         this.showCostumeDetails(document.querySelector("#costume-details-div"), costume);
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 
     static showCostumeDetails(parent, costume) {
@@ -58,6 +57,36 @@ export default class UI {
         parent.appendChild(costumeEl);
     }
 
+    static editOneCostume(index) {
+        const costumes = Store.getCostumes();
+        const costume = costumes[index];
+        console.log(costume);
+        this.editCostumeDetails(costume);
+    }
+
+    static editCostumeDetails(costume) {
+        document.querySelector('#character').value = costume.character;
+        const radioGender = document.getElementsByName('gender');
+        for (let i = 0; i < radioGender.length; i++) {
+            if (radioGender[i].getAttribute('value') == costume.gender) {
+                radioGender[i].checked = true;
+            }
+        }
+        const radioAgeGroup = document.getElementsByName('age-group');
+        for (let i = 0; i < radioAgeGroup.length; i++) {
+            if (radioAgeGroup[i].getAttribute('value') == costume.age) {
+                radioAgeGroup[i].checked = true;
+            }
+        }
+        document.querySelector('#size').value = costume.size;
+        const picMessageDiv = document.querySelector('#picMessage');
+        const picMessage = document.createElement('p');
+        picMessage.classList.add('warning');
+        picMessage.innerText="When editing a costume, the picture must be uploaded again.";
+        picMessageDiv.appendChild(picMessage);
+        document.querySelector('#notes').value = costume.notes;
+
+    }
     static filterCostumes(el) {
         const list = document.querySelector('#costume-list');
         const costumes = list.childNodes;
@@ -143,9 +172,5 @@ export default class UI {
         picMessage.appendChild(p);
         // Vanish in 2.5 seconds
         setTimeout(() => document.querySelector('.warning').remove(), 2500);
-    }
-    // TODO: be able to edit costumes
-    static editCostumeDetails() {
-        `<a href="#" class="btn btn-lg fas fa-edit btn-edit">`
     }
 }

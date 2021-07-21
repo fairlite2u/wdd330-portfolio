@@ -47,6 +47,20 @@ document.querySelector('#costume-list').addEventListener('click', (e) => {
     }
 });
 
+// Event: Edit a Costume
+document.querySelector('#costume-list').addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-edit')) {
+        const inventoryBtn = document.querySelector('.inventory-container');
+        inventoryBtn.classList.toggle('expand');
+        const showFormBtn = document.querySelector('.form-container');
+        if (!showFormBtn.classList.contains('expand')) {
+        showFormBtn.classList.toggle('expand');
+        }
+        console.log(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+        UI.editOneCostume(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+    }
+});
+
 // Event: Remove a Costume
 document.querySelector('#costume-list').addEventListener('click', (e) => {
     if (e.target.classList.contains('delete')) {

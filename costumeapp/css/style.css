@@ -171,6 +171,10 @@ th#edit {
   padding-left: .7rem;
 }
 
+tbody,
+tbody tr {
+  border: 2px solid #eee0cb;
+}
 label {
   display: inline-block;
   font-size: calc(1rem + .2vw);
