@@ -20,9 +20,9 @@ export default class UI {
             <td>${costume.gender}</td>
             <td>${costume.age} ${costume.size}</td>
             <td class="hidden">${index}</td>
-            <td><a href="#" id="costume-info" class="btn-lg fas fa-info-circle btn-info"></td>
-            <td><a href="#" class="btn btn-lg fas fa-edit btn-edit"></td>
-            <td><a href="#" class="btn btn-danger btn-lg delete">X</td>
+            <td><a href="#" id="costume-info" class="btn-info"><img id="img-info" src="./images/info-circle.svg" alt="Details"></td>
+            <td><a href="#" class="btn-edit"><img id="img-edit" src="./images/edit-solid.svg" alt="Edit"></td>
+            <td><a href="#" class="btn-danger delete"><img id="img-delete" src="./images/trash-alt-solid.svg" alt="Delete"></td>
         `;
         row.classList = `costume-row ${costume.gender} ${costume.age}`
         list.appendChild(row);

@@ -59,9 +59,9 @@ document.querySelector('#costume-list').addEventListener('click', (e) => {
         }
         const showFormBtn = document.querySelector('.form-container');
         if (!showFormBtn.classList.contains('expand')) {
-        showFormBtn.classList.toggle('expand');
-        document.querySelector('#add-inventory').innerText = "Edit Costume In Inventory";
-        document.querySelector('#add-heading').innerText = "Edit Costume Details";
+            showFormBtn.classList.toggle('expand');
+            document.querySelector('#add-inventory').innerText = "Edit Costume In Inventory";
+            document.querySelector('#add-heading').innerText = "Edit Costume Details";
         }
         UI.editOneCostume(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
     }
@@ -109,8 +109,31 @@ document.querySelector(".edit-btn").addEventListener('click', (e) => {
     }
 });
 
-// TODO:
 // Event: Cancel Edit Costume
+document.querySelector('.cancel-btn').addEventListener('click', () => {
+    // Clear fields
+    UI.clearFields();
+    document.querySelector('.warning').remove();
+    document.querySelector('#add-inventory').innerText = "Add Costume to Inventory";
+    document.querySelector('#add-heading').innerText = "Add Costume Details";
+    const inventoryBtn = document.querySelector('.inventory-container');
+    inventoryBtn.classList.toggle('expand');
+    if (inventoryBtn.classList.contains('expand')) {
+        document.querySelector('#show-inventory').innerText = "Hide Current Inventory";
+    } else {
+        document.querySelector('#show-inventory').innerText = "Show Current Inventory";
+    }
+    document.querySelector('.add-btn').classList.toggle('hidden');
+    document.querySelector('.edit-btn').classList.toggle('hidden');
+    document.querySelector('.cancel-btn').classList.toggle('hidden');
+    const showFormBtn = document.querySelector('.form-container');
+    showFormBtn.classList.toggle('expand');
+    if (showFormBtn.classList.contains('expand')) {
+        document.querySelector('#add-inventory').innerText = "Hide Form";
+    } else {
+        document.querySelector('#add-inventory').innerText = "Add New Costume To Inventory";
+    }
+});
 
 // Event: Remove a Costume
 document.querySelector('#costume-list').addEventListener('click', (e) => {
@@ -180,7 +203,7 @@ document.querySelector("#picture-file").addEventListener("change", function () {
         const recentImageDataURL = localStorage.getItem("recent-image");
         if (recentImageDataURL) {
             document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
-        }  else {
+        } else {
             document.querySelector("#imgPreview").setAttribute("src", "./images/No_Image_Available.jpg")
         }
     })
@@ -194,7 +217,7 @@ document.getElementById("picture-file").addEventListener("change", function show
     // at all.)
     const input = document.getElementById('picture-file');
     const file = input.files[0];
-    const size = file.size/1024/1024
+    const size = file.size / 1024 / 1024
     if (!file) { // This is VERY unlikely, browser support is near-universal
         console.error("This browser doesn't seem to support the `files` property of file inputs.");
     } else if (!file) {
