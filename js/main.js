@@ -10,6 +10,7 @@ const weekLinks = [
     {label: "Week 9", url: "week9/index.html"},
     {label: "Week 10", url: "week10/index.html"},
     {label: "Week 11", url: "week11/index.html"},
+    {label: "Practice Tutorials", url: "tutorials/index.html"},
     {label: "Final Project: Costume Inventory App", url: "costumeapp/index.html"}
 ]
 
